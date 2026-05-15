@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://github.com/garethbjohnson/gutendex"
+      }
+      description: "JSON web API for Project Gutenberg ebook metadata. Provides book information, search, and filtering options."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://gutendex.com"
+        }
+      ]
+      title: "Gutendex"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

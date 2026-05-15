@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "book": {
+      "BOOK00": {
+        "author": [],
+        "bookshelf": [],
+        "copyright": true,
+        "download_count": "s7b",
+        "format": {},
+        "id": "BOOK00",
+        "language": [],
+        "media_type": "s7f",
+        "subject": [],
+        "summary": [],
+        "title": "s82",
+        "translator": []
+      },
+      "BOOK01": {
+        "author": [],
+        "bookshelf": [],
+        "copyright": true,
+        "download_count": "sf3",
+        "format": {},
+        "id": "BOOK01",
+        "language": [],
+        "media_type": "sf7",
+        "subject": [],
+        "summary": [],
+        "title": "sfa",
+        "translator": []
+      },
+      "BOOK02": {
+        "author": [],
+        "bookshelf": [],
+        "copyright": true,
+        "download_count": "s16b",
+        "format": {},
+        "id": "BOOK02",
+        "language": [],
+        "media_type": "s16f",
+        "subject": [],
+        "summary": [],
+        "title": "s172",
+        "translator": []
+      }
+    }
+  },
+  "new": {
+    "book": {
+      "book_ref01": {
+        "author": [],
+        "bookshelf": [],
+        "copyright": true,
+        "download_count": "s1e3",
+        "format": {},
+        "language": [],
+        "media_type": "s1e7",
+        "subject": [],
+        "summary": [],
+        "title": "s1ea",
+        "translator": []
+      }
+    }
+  }
+}

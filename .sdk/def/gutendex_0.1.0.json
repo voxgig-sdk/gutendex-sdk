@@ -1,0 +1,358 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Gutendex",
+    "description": "JSON web API for Project Gutenberg ebook metadata. Provides book information, search, and filtering options.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/garethbjohnson/gutendex"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://gutendex.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/books": {
+      "get": {
+        "summary": "Get list of books",
+        "description": "Returns a paginated list of books from the Project Gutenberg database. Books are ordered by popularity (download count) by default.",
+        "operationId": "getBooks",
+        "parameters": [
+          {
+            "name": "author_year_start",
+            "in": "query",
+            "description": "Find books with at least one author alive in or after this year. Must be a positive or negative integer.",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1800
+          },
+          {
+            "name": "author_year_end",
+            "in": "query",
+            "description": "Find books with at least one author alive in or before this year. Must be a positive or negative integer.",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1899
+          },
+          {
+            "name": "copyright",
+            "in": "query",
+            "description": "Filter by copyright status: true (existing copyrights), false (public domain in USA), or null (no information). Can be comma-separated.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "true,false"
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "Comma-separated list of Project Gutenberg ID numbers.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "11,12,13"
+          },
+          {
+            "name": "languages",
+            "in": "query",
+            "description": "Comma-separated list of two-character language codes.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "en,fr"
+          },
+          {
+            "name": "mime_type",
+            "in": "query",
+            "description": "Filter books by MIME type. Matches books with MIME types starting with the given value.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "text/html"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search author names and book titles. Words must be space-separated (URL-encoded as %20). Case-insensitive.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "dickens great"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort order for books: 'ascending' (ID low to high), 'descending' (ID high to low), or 'popular' (most to least downloads, default).",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ascending",
+                "descending",
+                "popular"
+              ],
+              "default": "popular"
+            }
+          },
+          {
+            "name": "topic",
+            "in": "query",
+            "description": "Case-insensitive search for key-phrase in books' bookshelves or subjects.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "children"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with paginated list of books",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "summary": "Get individual book",
+        "description": "Returns detailed information about a single book by its Project Gutenberg ID number.",
+        "operationId": "getBookById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project Gutenberg ID number of the book",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 84
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with book details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Book not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BookList": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Total number of books for the query across all pages"
+          },
+          "next": {
+            "type": "string",
+            "nullable": true,
+            "description": "URL to the next page of results, or null if on the last page"
+          },
+          "previous": {
+            "type": "string",
+            "nullable": true,
+            "description": "URL to the previous page of results, or null if on the first page"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Book"
+            },
+            "description": "Array of 0-32 book objects",
+            "minItems": 0,
+            "maxItems": 32
+          }
+        },
+        "required": [
+          "count",
+          "next",
+          "previous",
+          "results"
+        ]
+      },
+      "Book": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Project Gutenberg ID number"
+          },
+          "title": {
+            "type": "string",
+            "description": "Book title"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of subjects associated with the book"
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            },
+            "description": "List of authors"
+          },
+          "summaries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Book summaries"
+          },
+          "translators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            },
+            "description": "List of translators"
+          },
+          "bookshelves": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Project Gutenberg bookshelves the book belongs to"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of two-character language codes"
+          },
+          "copyright": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)"
+          },
+          "media_type": {
+            "type": "string",
+            "description": "Media type of the book"
+          },
+          "formats": {
+            "$ref": "#/components/schemas/Format"
+          },
+          "download_count": {
+            "type": "integer",
+            "description": "Number of downloads from Project Gutenberg"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "subjects",
+          "authors",
+          "summaries",
+          "translators",
+          "bookshelves",
+          "languages",
+          "copyright",
+          "media_type",
+          "formats",
+          "download_count"
+        ]
+      },
+      "Person": {
+        "type": "object",
+        "properties": {
+          "birth_year": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Year of birth, or null if unknown"
+          },
+          "death_year": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Year of death, or null if unknown"
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name of the person"
+          }
+        },
+        "required": [
+          "birth_year",
+          "death_year",
+          "name"
+        ]
+      },
+      "Format": {
+        "type": "object",
+        "description": "Available formats for the book, where keys are MIME types and values are download URLs",
+        "additionalProperties": {
+          "type": "string",
+          "format": "uri"
+        },
+        "example": {
+          "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
+          "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub.images",
+          "text/plain": "https://www.gutenberg.org/files/84/84-0.txt"
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          }
+        },
+        "required": [
+          "detail"
+        ]
+      }
+    }
+  }
+}
