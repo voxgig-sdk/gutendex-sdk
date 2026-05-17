@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/gutendex-sdk"
-	"github.com/voxgig-sdk/gutendex-sdk/core"
+	sdk "github.com/voxgig-sdk/gutendex-sdk/go"
+	"github.com/voxgig-sdk/gutendex-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/gutendex-sdk/go/utility/struct"
 )
 
 func TestBookEntity(t *testing.T) {

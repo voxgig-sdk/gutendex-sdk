@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/gutendex-sdk"
-	"github.com/voxgig-sdk/gutendex-sdk/core"
+	sdk "github.com/voxgig-sdk/gutendex-sdk/go"
+	"github.com/voxgig-sdk/gutendex-sdk/go/core"
 )
 
 func TestBookDirect(t *testing.T) {

@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/gutendex-sdk/core"
+	"github.com/voxgig-sdk/gutendex-sdk/go/core"
 )
 
 type BaseFeature struct {

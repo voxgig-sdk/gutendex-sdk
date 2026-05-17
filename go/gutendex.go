@@ -1,10 +1,10 @@
 package voxgiggutendexsdk
 
 import (
-	"github.com/voxgig-sdk/gutendex-sdk/core"
-	"github.com/voxgig-sdk/gutendex-sdk/entity"
-	"github.com/voxgig-sdk/gutendex-sdk/feature"
-	_ "github.com/voxgig-sdk/gutendex-sdk/utility"
+	"github.com/voxgig-sdk/gutendex-sdk/go/core"
+	"github.com/voxgig-sdk/gutendex-sdk/go/entity"
+	"github.com/voxgig-sdk/gutendex-sdk/go/feature"
+	_ "github.com/voxgig-sdk/gutendex-sdk/go/utility"
 )
 
 // Type aliases preserve external API.
