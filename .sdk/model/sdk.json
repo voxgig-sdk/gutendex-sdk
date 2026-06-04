@@ -16,7 +16,15 @@
           }
         ],
         "title": "Gutendex",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Query Project Gutenberg ebook metadata over a simple JSON web API",
+        "homepage": "https://gutendex.com",
+        "docs_url": "https://gutendex.com",
+        "about_md": "[Gutendex](https://gutendex.com) is a JSON web API that exposes metadata for the public-domain ebook collection at [Project Gutenberg](https://www.gutenberg.org). The project is open source and community-maintained on GitHub (`garethbjohnson/gutendex`), and the hosted instance lets you query books without setting up your own server.\n\nWhat you get from the API:\n\n- `GET /books` returns paginated lists of books, with filters for `author_year_start`/`author_year_end`, `copyright`, `ids`, `languages`, `mime_type`, `search`, `sort` (ascending, descending, popular), and `topic` (bookshelves and subjects).\n- `GET /books/<id>` returns a single book by its Project Gutenberg ID.\n- Each book object includes `id`, `title`, `subjects`, `authors`, `summaries`, `translators`, `bookshelves`, `languages`, `copyright`, `media_type`, `formats` (download URLs by MIME type), and `download_count`.\n\nThe underlying ebook content and metadata come from Project Gutenberg. The hosted API does not document authentication or rate limits, and CORS is reported as disabled, so browser-side calls may need a proxy. You can self-host from the source repository if you need a more reliable instance.",
+        "entity_desc": {
+          "book": "A Project Gutenberg ebook record, including title, authors, languages, subjects, bookshelves, copyright status, and download links — listed at `/books` and fetched individually at `/books/<id>`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +32,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "book": {

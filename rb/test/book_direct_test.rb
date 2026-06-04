@@ -114,14 +114,12 @@ def book_direct_setup(mockres)
   env = Runner.env_override({
     "GUTENDEX_TEST_BOOK_ENTID" => {},
     "GUTENDEX_TEST_LIVE" => "FALSE",
-    "GUTENDEX_APIKEY" => "NONE",
   })
 
   live = env["GUTENDEX_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["GUTENDEX_APIKEY"],
     }
     client = GutendexSDK.new(merged_opts)
     return {

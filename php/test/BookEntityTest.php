@@ -96,7 +96,6 @@ function book_basic_setup($extra)
         "GUTENDEX_TEST_BOOK_ENTID" => $idmap,
         "GUTENDEX_TEST_LIVE" => "FALSE",
         "GUTENDEX_TEST_EXPLAIN" => "FALSE",
-        "GUTENDEX_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -108,7 +107,6 @@ function book_basic_setup($extra)
     if ($env["GUTENDEX_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["GUTENDEX_APIKEY"],
             ],
             $extra ?? [],
         ]);

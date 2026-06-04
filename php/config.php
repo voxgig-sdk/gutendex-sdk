@@ -20,9 +20,6 @@ class GutendexConfig
             ],
             "options" => [
                 "base" => "https://gutendex.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
