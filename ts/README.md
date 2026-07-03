@@ -10,7 +10,7 @@ The TypeScript SDK for the Gutendex API — a type-safe, entity-oriented client 
 
 ## Install
 ```bash
-npm install gutendex
+npm install @voxgig-sdk/gutendex
 ```
 ## Tutorial: your first API call
 

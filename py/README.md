@@ -10,7 +10,7 @@ The Python SDK for the Gutendex API — an entity-oriented client following Pyth
 
 ## Install
 ```bash
-pip install gutendex-sdk
+pip install voxgig-sdk-gutendex
 ```
 
 Or install from source:

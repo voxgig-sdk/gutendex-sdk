@@ -10,13 +10,13 @@ The Ruby SDK for the Gutendex API — an entity-oriented client using idiomatic 
 
 ## Install
 ```bash
-gem install gutendex-sdk
+gem install voxgig-sdk-gutendex
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "gutendex-sdk"
+gem "voxgig-sdk-gutendex"
 ```
 
 Then run:
