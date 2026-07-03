@@ -1,20 +1,8 @@
 # Gutendex SDK
 
-Query Project Gutenberg ebook metadata over a simple JSON web API
+Gutendex client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Gutendex
-
-[Gutendex](https://gutendex.com) is a JSON web API that exposes metadata for the public-domain ebook collection at [Project Gutenberg](https://www.gutenberg.org). The project is open source and community-maintained on GitHub (`garethbjohnson/gutendex`), and the hosted instance lets you query books without setting up your own server.
-
-What you get from the API:
-
-- `GET /books` returns paginated lists of books, with filters for `author_year_start`/`author_year_end`, `copyright`, `ids`, `languages`, `mime_type`, `search`, `sort` (ascending, descending, popular), and `topic` (bookshelves and subjects).
-- `GET /books/<id>` returns a single book by its Project Gutenberg ID.
-- Each book object includes `id`, `title`, `subjects`, `authors`, `summaries`, `translators`, `bookshelves`, `languages`, `copyright`, `media_type`, `formats` (download URLs by MIME type), and `download_count`.
-
-The underlying ebook content and metadata come from Project Gutenberg. The hosted API does not document authentication or rate limits, and CORS is reported as disabled, so browser-side calls may need a proxy. You can self-host from the source repository if you need a more reliable instance.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install gutendex-sdk
 luarocks install gutendex-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { GutendexSDK } from 'gutendex'
 
-const client = new GutendexSDK({})
+const client = new GutendexSDK({
+  apikey: process.env.GUTENDEX_APIKEY,
+})
 
 // List all books
 const books = await client.Book().list()
+console.log(books.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Book** | A Project Gutenberg ebook record, including title, authors, languages, subjects, bookshelves, copyright status, and download links — listed at `/books` and fetched individually at `/books/<id>`. | `/books` |
+| **Book** |  | `/books` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,17 +100,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from gutendex_sdk import GutendexSDK
 
-client = GutendexSDK({})
+client = GutendexSDK({
+    "apikey": os.environ.get("GUTENDEX_APIKEY"),
+})
 
 # List all books
-books, err = client.Book(None).list(None, None)
+books, err = client.Book().list()
+print(books)
 
 # Load a specific book
-book, err = client.Book(None).load(
-    {"id": "example_id"}, None
-)
+book, err = client.Book().load({"id": "example_id"})
+print(book)
 ```
 
 ### PHP
@@ -129,15 +122,17 @@ book, err = client.Book(None).load(
 <?php
 require_once 'gutendex_sdk.php';
 
-$client = new GutendexSDK([]);
+$client = new GutendexSDK([
+    "apikey" => getenv("GUTENDEX_APIKEY"),
+]);
 
 // List all books
-[$books, $err] = $client->Book(null)->list(null, null);
+[$books, $err] = $client->Book()->list();
+print_r($books);
 
 // Load a specific book
-[$book, $err] = $client->Book(null)->load(
-    ["id" => "example_id"], null
-);
+[$book, $err] = $client->Book()->load(["id" => "example_id"]);
+print_r($book);
 ```
 
 ### Golang
@@ -145,10 +140,13 @@ $client = new GutendexSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/gutendex-sdk/go"
 
-client := sdk.NewGutendexSDK(map[string]any{})
+client := sdk.NewGutendexSDK(map[string]any{
+    "apikey": os.Getenv("GUTENDEX_APIKEY"),
+})
 
 // List all books
 books, err := client.Book(nil).List(nil, nil)
+fmt.Println(books)
 ```
 
 ### Ruby
@@ -156,15 +154,17 @@ books, err := client.Book(nil).List(nil, nil)
 ```ruby
 require_relative "Gutendex_sdk"
 
-client = GutendexSDK.new({})
+client = GutendexSDK.new({
+  "apikey" => ENV["GUTENDEX_APIKEY"],
+})
 
 # List all books
-books, err = client.Book(nil).list(nil, nil)
+books, err = client.Book().list
+puts books
 
 # Load a specific book
-book, err = client.Book(nil).load(
-  { "id" => "example_id" }, nil
-)
+book, err = client.Book().load({ "id" => "example_id" })
+puts book
 ```
 
 ### Lua
@@ -172,15 +172,17 @@ book, err = client.Book(nil).load(
 ```lua
 local sdk = require("gutendex_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("GUTENDEX_APIKEY"),
+})
 
 -- List all books
-local books, err = client:Book(nil):list(nil, nil)
+local books, err = client:Book():list()
+print(books)
 
 -- Load a specific book
-local book, err = client:Book(nil):load(
-  { id = "example_id" }, nil
-)
+local book, err = client:Book():load({ id = "example_id" })
+print(book)
 ```
 
 ## Unit testing in offline mode
@@ -199,25 +201,21 @@ const result = await client.Book().load({ id: 'test01' })
 ### Python
 
 ```python
-client = GutendexSDK.test(None, None)
-result, err = client.Book(None).load(
-    {"id": "test01"}, None
-)
+client = GutendexSDK.test()
+result, err = client.Book().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = GutendexSDK::test(null, null);
-[$result, $err] = $client->Book(null)->load(
-    ["id" => "test01"], null
-);
+$client = GutendexSDK::test();
+[$result, $err] = $client->Book()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Book(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -226,19 +224,15 @@ result, err := client.Book(nil).Load(
 ### Ruby
 
 ```ruby
-client = GutendexSDK.test(nil, nil)
-result, err = client.Book(nil).load(
-  { "id" => "test01" }, nil
-)
+client = GutendexSDK.test
+result, err = client.Book().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Book(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Book():load({ id = "test01" })
 ```
 
 ## How it works
@@ -342,10 +336,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Gutendex
-
-- Upstream: [https://gutendex.com](https://gutendex.com)
 
 ---
 

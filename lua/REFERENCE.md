@@ -30,12 +30,12 @@ Create a new SDK client instance.
 
 ### Static Methods
 
-#### `sdk.test(testopts, sdkopts)`
+#### `sdk.test(testopts?, sdkopts?)`
 
-Create a test client with mock features active. Both arguments may be `nil`.
+Create a test client with mock features active. Both arguments are optional.
 
 ```lua
-local client = sdk.test(nil, nil)
+local client = sdk.test()
 ```
 
 
@@ -111,7 +111,7 @@ local book = client:Book(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Book(nil):list(nil, nil)
+local results, err = client:Book():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -119,7 +119,7 @@ local results, err = client:Book(nil):list(nil, nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Book(nil):load({ id = "book_id" }, nil)
+local result, err = client:Book():load({ id = "book_id" })
 ```
 
 ### Common Methods

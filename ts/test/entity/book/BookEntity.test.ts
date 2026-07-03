@@ -120,6 +120,7 @@ function basicSetup(extra?: any) {
     'GUTENDEX_TEST_BOOK_ENTID': idmap,
     'GUTENDEX_TEST_LIVE': 'FALSE',
     'GUTENDEX_TEST_EXPLAIN': 'FALSE',
+    'GUTENDEX_APIKEY': 'NONE',
   })
 
   idmap = env['GUTENDEX_TEST_BOOK_ENTID']
@@ -129,6 +130,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new GutendexSDK(merge([
       {
+        apikey: env.GUTENDEX_APIKEY,
       },
       extra
     ]))

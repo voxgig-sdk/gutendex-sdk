@@ -117,12 +117,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'GUTENDEX_TEST_BOOK_ENTID': {},
     'GUTENDEX_TEST_LIVE': 'FALSE',
+    'GUTENDEX_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.GUTENDEX_TEST_LIVE
 
   if (live) {
     const client = new GutendexSDK({
+      apikey: env.GUTENDEX_APIKEY,
     })
 
     let idmap: any = env['GUTENDEX_TEST_BOOK_ENTID']
