@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch BookLoadMatch
+---@param ctrl? table
+---@return Book
+---@return string? err
 function BookEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch BookListMatch
+---@param ctrl? table
+---@return Book[]
+---@return string? err
 function BookEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

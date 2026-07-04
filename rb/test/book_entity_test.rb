@@ -43,16 +43,14 @@ class BookEntityTest < Minitest::Test
     book_ref01_ent = client.Book(nil)
     book_ref01_match = {}
 
-    book_ref01_list_result, err = book_ref01_ent.list(book_ref01_match, nil)
-    assert_nil err
+    book_ref01_list_result = book_ref01_ent.list(book_ref01_match, nil)
     assert book_ref01_list_result.is_a?(Array)
 
     # LOAD
     book_ref01_match_dt0 = {
       "id" => book_ref01_data["id"],
     }
-    book_ref01_data_dt0_loaded, err = book_ref01_ent.load(book_ref01_match_dt0, nil)
-    assert_nil err
+    book_ref01_data_dt0_loaded = book_ref01_ent.load(book_ref01_match_dt0, nil)
     book_ref01_data_dt0_load_result = Helpers.to_map(book_ref01_data_dt0_loaded)
     assert !book_ref01_data_dt0_load_result.nil?
     assert_equal book_ref01_data_dt0_load_result["id"], book_ref01_data["id"]
@@ -93,7 +91,6 @@ def book_basic_setup(extra)
     "GUTENDEX_TEST_BOOK_ENTID" => idmap,
     "GUTENDEX_TEST_LIVE" => "FALSE",
     "GUTENDEX_TEST_EXPLAIN" => "FALSE",
-    "GUTENDEX_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -105,7 +102,6 @@ def book_basic_setup(extra)
   if env["GUTENDEX_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["GUTENDEX_APIKEY"],
       },
       extra || {},
     ])

@@ -2,6 +2,8 @@
 
 import { BookEntity } from './entity/BookEntity'
 
+export type * from './GutendexTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class GutendexSDK {
 
 
 
+  _book?: BookEntity
+
+  // Idiomatic facade: `client.book.list()` / `client.book.load({ id })`.
+  get book(): BookEntity {
+    return (this._book ??= new BookEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.book` instead. */
   Book(data?: any) {
     const self = this
     return new BookEntity(self,data)

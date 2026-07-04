@@ -135,7 +135,6 @@ func bookBasicSetup(extra map[string]any) *entityTestSetup {
 		"GUTENDEX_TEST_BOOK_ENTID": idmap,
 		"GUTENDEX_TEST_LIVE":      "FALSE",
 		"GUTENDEX_TEST_EXPLAIN":   "FALSE",
-		"GUTENDEX_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["GUTENDEX_TEST_BOOK_ENTID"])
@@ -146,7 +145,6 @@ func bookBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["GUTENDEX_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["GUTENDEX_APIKEY"],
 			},
 			extra,
 		})

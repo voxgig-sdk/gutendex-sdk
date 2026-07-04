@@ -9,9 +9,12 @@ The TypeScript SDK for the Gutendex API — a type-safe, entity-oriented client 
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/gutendex
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/gutendex-sdk/releases](https://github.com/voxgig-sdk/gutendex-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { GutendexSDK } from 'gutendex'
+import { GutendexSDK } from '@voxgig-sdk/gutendex'
 
-const client = new GutendexSDK({
-  apikey: process.env.GUTENDEX_APIKEY,
-})
+const client = new GutendexSDK()
 ```
 
 ### 2. List books
 
 ```ts
-const result = await client.Book().list()
+const result = await client.book.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -42,7 +43,7 @@ if (result.ok) {
 ### 3. Load a book
 
 ```ts
-const result = await client.Book().load({ id: 'example_id' })
+const result = await client.book.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -91,7 +92,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = GutendexSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.book.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -99,7 +100,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new GutendexSDK({ apikey: '...' })
+const client = new GutendexSDK()
 const testClient = client.tester()
 ```
 
@@ -108,7 +109,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.book
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -135,7 +136,6 @@ const logger = {
 }
 
 const client = new GutendexSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -146,7 +146,6 @@ Create a `.env.local` file at the project root:
 
 ```
 GUTENDEX_TEST_LIVE=TRUE
-GUTENDEX_APIKEY=<your-key>
 ```
 
 Then run:
@@ -164,7 +163,6 @@ cd ts && npm test
 
 ```ts
 new GutendexSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -175,7 +173,6 @@ new GutendexSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -289,7 +286,7 @@ API path: `/books`
 
 ### Book
 
-Create an instance: `const book = client.Book()`
+Create an instance: `const book = client.book`
 
 #### Operations
 
@@ -318,13 +315,13 @@ Create an instance: `const book = client.Book()`
 #### Example: Load
 
 ```ts
-const book = await client.Book().load({ id: 'book_id' })
+const book = await client.book.load({ id: 'book_id' })
 ```
 
 #### Example: List
 
 ```ts
-const books = await client.Book().list()
+const books = await client.book.list()
 ```
 
 
@@ -385,7 +382,7 @@ gutendex/
 Import the SDK from the package root:
 
 ```ts
-import { GutendexSDK } from 'gutendex'
+import { GutendexSDK } from '@voxgig-sdk/gutendex'
 ```
 
 ### Entity state
@@ -395,11 +392,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const book = client.book
+await book.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// book.data() now returns the loaded book data
+// book.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

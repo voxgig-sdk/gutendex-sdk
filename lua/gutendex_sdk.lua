@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:book():list() / client:book():load({ id = ... })
+function GutendexSDK:book(data)
+  local EntityMod = require("entity.book_entity")
+  if data == nil then
+    if self._book == nil then
+      self._book = EntityMod.new(self, nil)
+    end
+    return self._book
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:book() instead.
 function GutendexSDK:Book(data)
   local EntityMod = require("entity.book_entity")
   return EntityMod.new(self, data)

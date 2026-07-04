@@ -15,9 +15,6 @@ module GutendexConfig
       },
       "options" => {
         "base" => "https://gutendex.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -249,6 +246,7 @@ module GutendexConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
+                        "index$" => 0,
                       },
                     ],
                   },

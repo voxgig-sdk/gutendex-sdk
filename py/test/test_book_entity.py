@@ -50,16 +50,14 @@ class TestBookEntity:
         book_ref01_ent = client.Book(None)
         book_ref01_match = {}
 
-        book_ref01_list_result, err = book_ref01_ent.list(book_ref01_match, None)
-        assert err is None
+        book_ref01_list_result = book_ref01_ent.list(book_ref01_match, None)
         assert isinstance(book_ref01_list_result, list)
 
         # LOAD
         book_ref01_match_dt0 = {
             "id": book_ref01_data["id"],
         }
-        book_ref01_data_dt0_loaded, err = book_ref01_ent.load(book_ref01_match_dt0, None)
-        assert err is None
+        book_ref01_data_dt0_loaded = book_ref01_ent.load(book_ref01_match_dt0, None)
         book_ref01_data_dt0_load_result = helpers.to_map(book_ref01_data_dt0_loaded)
         assert book_ref01_data_dt0_load_result is not None
         assert book_ref01_data_dt0_load_result["id"] == book_ref01_data["id"]
@@ -102,7 +100,6 @@ def _book_basic_setup(extra):
         "GUTENDEX_TEST_BOOK_ENTID": idmap,
         "GUTENDEX_TEST_LIVE": "FALSE",
         "GUTENDEX_TEST_EXPLAIN": "FALSE",
-        "GUTENDEX_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -113,7 +110,6 @@ def _book_basic_setup(extra):
     if env.get("GUTENDEX_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("GUTENDEX_APIKEY"),
             },
             extra or {},
         ])

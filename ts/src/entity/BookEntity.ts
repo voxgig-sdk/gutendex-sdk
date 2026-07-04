@@ -14,9 +14,14 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Book,
+  BookLoadMatch,
+  BookListMatch,
+} from '../GutendexTypes'
 
 // TODO: needs Entity superclass
-class BookEntity extends GutendexEntityBase {
+class BookEntity extends GutendexEntityBase<Book> {
 
   constructor(client: GutendexSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +37,7 @@ class BookEntity extends GutendexEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: BookLoadMatch, ctrl?: Control): Promise<Book> {
 
     const utility = this._utility
 
@@ -136,14 +141,16 @@ class BookEntity extends GutendexEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Book> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: BookListMatch, ctrl?: Control): Promise<Book[]> {
 
     const utility = this._utility
 
@@ -243,7 +250,9 @@ class BookEntity extends GutendexEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Book[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

@@ -175,14 +175,12 @@ func bookDirectSetup(mockres any) *bookDirectSetupResult {
 	env := envOverride(map[string]any{
 		"GUTENDEX_TEST_BOOK_ENTID": map[string]any{},
 		"GUTENDEX_TEST_LIVE":    "FALSE",
-		"GUTENDEX_APIKEY":       "NONE",
 	})
 
 	live := env["GUTENDEX_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["GUTENDEX_APIKEY"],
 		}
 		client := sdk.NewGutendexSDK(mergedOpts)
 

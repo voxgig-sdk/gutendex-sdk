@@ -245,6 +245,9 @@ func (sdk *GutendexSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 }
 
 
+// Book returns a Book entity bound to this client.
+// Idiomatic usage: client.Book(nil).List(nil, nil) or
+// client.Book(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *GutendexSDK) Book(data map[string]any) GutendexEntity {
 	return NewBookEntityFunc(sdk, data)
 }
