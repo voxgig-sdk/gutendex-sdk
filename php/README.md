@@ -29,18 +29,16 @@ require_once 'gutendex_sdk.php';
 $client = new GutendexSDK();
 ```
 
-### 2. List books
+### 2. List book records
 
 ```php
 try {
-    $result = $client->book()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Book records — iterate directly.
+    $books = $client->Book()->list();
+    foreach ($books as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -49,9 +47,10 @@ try {
 
 ```php
 try {
-    $result = $client->book()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Book record (throws on error).
+    $book = $client->Book()->load(["id" => "example_id"]);
+    print_r($book);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -97,13 +96,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = GutendexSDK::test();
+$client = GutendexSDK::test([
+    "entity" => ["book" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->book()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$book = $client->Book()->load(["id" => "test01"]);
+print_r($book);
 ```
 
 ### Use a custom fetch function
@@ -250,7 +253,7 @@ API path: `/books`
 
 ### Book
 
-Create an instance: `const book = client.book`
+Create an instance: `$book = $client->Book();`
 
 #### Operations
 
@@ -278,14 +281,16 @@ Create an instance: `const book = client.book`
 
 #### Example: Load
 
-```ts
-const book = await client.book.load({ id: 'book_id' })
+```php
+// load() returns the bare Book record (throws on error).
+$book = $client->Book()->load(["id" => "book_id"]);
 ```
 
 #### Example: List
 
-```ts
-const books = await client.book.list()
+```php
+// list() returns an array of Book records (throws on error).
+$books = $client->Book()->list();
 ```
 
 
@@ -360,7 +365,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$book = $client->book();
+$book = $client->Book();
 $book->load(["id" => "example_id"]);
 
 // $book->dataGet() now returns the loaded book data

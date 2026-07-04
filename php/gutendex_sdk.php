@@ -233,10 +233,10 @@ class GutendexSDK
 
     private $_book = null;
 
-    // Idiomatic facade: $client->book()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Book() (PHP method
-    // names are case-insensitive).
-    public function book($data = null)
+    // Canonical facade: $client->Book()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->book()
+    // resolves here too.
+    public function Book($data = null)
     {
         require_once __DIR__ . '/entity/book_entity.php';
         if ($data === null) {

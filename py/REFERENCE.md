@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## BookEntity
 
 ```python
-book = client.book
+book = client.Book()
 ```
 
 ### Fields
@@ -107,7 +107,9 @@ book = client.book
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.book.list({})
+results = client.Book().list({})
+for book in results:
+    print(book)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -115,7 +117,7 @@ results = client.book.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.book.load({"id": "book_id"})
+result = client.Book().load({"id": "book_id"})
 ```
 
 ### Common Methods

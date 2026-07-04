@@ -208,13 +208,7 @@ class GutendexSDK
   end
 
 
-  # Idiomatic facade: client.book.list / client.book.load({ "id" => ... })
-  def book
-    require_relative 'entity/book_entity'
-    @book ||= BookEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.book instead.
+  # Canonical facade: client.Book.list / client.Book.load({ "id" => ... })
   def Book(data = nil)
     require_relative 'entity/book_entity'
     BookEntity.new(self, data)

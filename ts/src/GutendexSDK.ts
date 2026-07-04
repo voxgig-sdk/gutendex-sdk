@@ -204,14 +204,7 @@ class GutendexSDK {
 
 
 
-  _book?: BookEntity
-
-  // Idiomatic facade: `client.book.list()` / `client.book.load({ id })`.
-  get book(): BookEntity {
-    return (this._book ??= new BookEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.book` instead. */
+  // Entity access: `client.Book().list()` / `client.Book().load({ id })`.
   Book(data?: any) {
     const self = this
     return new BookEntity(self,data)

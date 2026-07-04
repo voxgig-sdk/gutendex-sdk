@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:book():list() / client:book():load({ id = ... })
-function GutendexSDK:book(data)
+-- Idiomatic facade: client:Book():list() / client:Book():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function GutendexSDK:Book(data)
   local EntityMod = require("entity.book_entity")
   if data == nil then
     if self._book == nil then
@@ -253,12 +254,6 @@ function GutendexSDK:book(data)
     end
     return self._book
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:book() instead.
-function GutendexSDK:Book(data)
-  local EntityMod = require("entity.book_entity")
   return EntityMod.new(self, data)
 end
 

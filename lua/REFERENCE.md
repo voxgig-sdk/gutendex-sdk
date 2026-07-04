@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## BookEntity
 
 ```lua
-local book = client:book(nil)
+local book = client:Book(nil)
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ local book = client:book(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:book():list()
+local results, err = client:Book():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -118,7 +118,7 @@ local results, err = client:book():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:book():load({ id = "book_id" })
+local result, err = client:Book():load({ id = "book_id" })
 ```
 
 ### Common Methods

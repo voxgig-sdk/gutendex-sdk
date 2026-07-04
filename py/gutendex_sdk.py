@@ -220,25 +220,15 @@ class GutendexSDK:
         }
 
 
-    @property
-    def book(self):
-        """Idiomatic facade: client.book.list() / client.book.load({"id": ...})."""
-        from entity.book_entity import BookEntity
-        cached = getattr(self, "_book", None)
-        if cached is None:
-            cached = BookEntity(self, None)
-            self._book = cached
-        return cached
-
-    def Book(self, data=None):
-        # Deprecated: use client.book instead.
+    def Book(self, data=None) -> "BookEntity":
+        """Entity factory: client.Book().list({}) / client.Book().load({"id": ...})."""
         from entity.book_entity import BookEntity
         return BookEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "GutendexSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class GutendexSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.book_entity import BookEntity

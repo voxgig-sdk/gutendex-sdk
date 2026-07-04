@@ -109,7 +109,7 @@ Alias for `GutendexSDK.test()`.
 ## BookEntity
 
 ```ts
-const book = client.book
+const book = client.Book()
 ```
 
 ### Fields
@@ -136,7 +136,7 @@ const book = client.book
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.book.list()
+const results = await client.Book().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -144,7 +144,7 @@ const results = await client.book.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.book.load({ id: 'book_id' })
+const result = await client.Book().load({ id: 'book_id' })
 ```
 
 ### Common Methods

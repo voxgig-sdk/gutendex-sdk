@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## BookEntity
 
 ```php
-$book = $client->book();
+$book = $client->Book();
 ```
 
 ### Fields
@@ -112,7 +112,7 @@ $book = $client->book();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->book()->list([]);
+$results = $client->Book()->list([]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -120,7 +120,7 @@ $results = $client->book()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->book()->load(["id" => "book_id"]);
+$result = $client->Book()->load(["id" => "book_id"]);
 ```
 
 ### Common Methods
