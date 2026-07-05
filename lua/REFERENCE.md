@@ -90,18 +90,18 @@ local book = client:Book(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$ARRAY`` | Yes |  |
-| `bookshelf` | ``$ARRAY`` | Yes |  |
-| `copyright` | ``$BOOLEAN`` | Yes |  |
-| `download_count` | ``$INTEGER`` | Yes |  |
-| `format` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `language` | ``$ARRAY`` | Yes |  |
-| `media_type` | ``$STRING`` | Yes |  |
-| `subject` | ``$ARRAY`` | Yes |  |
-| `summary` | ``$ARRAY`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `translator` | ``$ARRAY`` | Yes |  |
+| `author` | `table` | Yes |  |
+| `bookshelf` | `table` | Yes |  |
+| `copyright` | `boolean` | Yes |  |
+| `download_count` | `number` | Yes |  |
+| `format` | `table` | Yes |  |
+| `id` | `number` | Yes |  |
+| `language` | `table` | Yes |  |
+| `media_type` | `string` | Yes |  |
+| `subject` | `table` | Yes |  |
+| `summary` | `table` | Yes |  |
+| `title` | `string` | Yes |  |
+| `translator` | `table` | Yes |  |
 
 ### Operations
 

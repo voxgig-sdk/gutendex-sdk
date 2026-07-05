@@ -8,7 +8,7 @@ Complete API reference for the Gutendex Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'gutendex_sdk'
+require_relative 'Gutendex_sdk'
 
 client = GutendexSDK.new(options)
 ```
@@ -93,27 +93,27 @@ book = client.Book
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$ARRAY`` | Yes |  |
-| `bookshelf` | ``$ARRAY`` | Yes |  |
-| `copyright` | ``$BOOLEAN`` | Yes |  |
-| `download_count` | ``$INTEGER`` | Yes |  |
-| `format` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `language` | ``$ARRAY`` | Yes |  |
-| `media_type` | ``$STRING`` | Yes |  |
-| `subject` | ``$ARRAY`` | Yes |  |
-| `summary` | ``$ARRAY`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `translator` | ``$ARRAY`` | Yes |  |
+| `author` | `Array` | Yes |  |
+| `bookshelf` | `Array` | Yes |  |
+| `copyright` | `Boolean` | Yes |  |
+| `download_count` | `Integer` | Yes |  |
+| `format` | `Hash` | Yes |  |
+| `id` | `Integer` | Yes |  |
+| `language` | `Array` | Yes |  |
+| `media_type` | `String` | Yes |  |
+| `subject` | `Array` | Yes |  |
+| `summary` | `Array` | Yes |  |
+| `title` | `String` | Yes |  |
+| `translator` | `Array` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Book.list(nil)
+results = client.Book.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`

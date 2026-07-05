@@ -87,27 +87,27 @@ book = client.Book()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$ARRAY`` | Yes |  |
-| `bookshelf` | ``$ARRAY`` | Yes |  |
-| `copyright` | ``$BOOLEAN`` | Yes |  |
-| `download_count` | ``$INTEGER`` | Yes |  |
-| `format` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `language` | ``$ARRAY`` | Yes |  |
-| `media_type` | ``$STRING`` | Yes |  |
-| `subject` | ``$ARRAY`` | Yes |  |
-| `summary` | ``$ARRAY`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `translator` | ``$ARRAY`` | Yes |  |
+| `author` | `list` | Yes |  |
+| `bookshelf` | `list` | Yes |  |
+| `copyright` | `bool` | Yes |  |
+| `download_count` | `int` | Yes |  |
+| `format` | `dict` | Yes |  |
+| `id` | `int` | Yes |  |
+| `language` | `list` | Yes |  |
+| `media_type` | `str` | Yes |  |
+| `subject` | `list` | Yes |  |
+| `summary` | `list` | Yes |  |
+| `title` | `str` | Yes |  |
+| `translator` | `list` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Book().list({})
+results = client.Book().list()
 for book in results:
     print(book)
 ```

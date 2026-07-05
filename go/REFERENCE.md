@@ -97,18 +97,18 @@ book := client.Book(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$ARRAY`` | Yes |  |
-| `bookshelf` | ``$ARRAY`` | Yes |  |
-| `copyright` | ``$BOOLEAN`` | Yes |  |
-| `download_count` | ``$INTEGER`` | Yes |  |
-| `format` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `language` | ``$ARRAY`` | Yes |  |
-| `media_type` | ``$STRING`` | Yes |  |
-| `subject` | ``$ARRAY`` | Yes |  |
-| `summary` | ``$ARRAY`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `translator` | ``$ARRAY`` | Yes |  |
+| `author` | `[]any` | Yes |  |
+| `bookshelf` | `[]any` | Yes |  |
+| `copyright` | `bool` | Yes |  |
+| `download_count` | `int` | Yes |  |
+| `format` | `map[string]any` | Yes |  |
+| `id` | `int` | Yes |  |
+| `language` | `[]any` | Yes |  |
+| `media_type` | `string` | Yes |  |
+| `subject` | `[]any` | Yes |  |
+| `summary` | `[]any` | Yes |  |
+| `title` | `string` | Yes |  |
+| `translator` | `[]any` | Yes |  |
 
 ### Operations
 

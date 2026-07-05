@@ -35,7 +35,7 @@ class BookLoadMatch
     public int $id;
 }
 
-/** Match filter for Book#list (any subset of Book fields). */
+/** Request payload for Book#list. */
 class BookListMatch
 {
     public ?array $author = null;

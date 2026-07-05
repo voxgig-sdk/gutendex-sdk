@@ -70,7 +70,7 @@ BookLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Book#list (any subset of Book fields).
+# Request payload for Book#list.
 #
 # @!attribute [rw] author
 #   @return [Array, nil]

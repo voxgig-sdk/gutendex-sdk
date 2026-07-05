@@ -116,18 +116,18 @@ const book = client.Book()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$ARRAY`` | Yes |  |
-| `bookshelf` | ``$ARRAY`` | Yes |  |
-| `copyright` | ``$BOOLEAN`` | Yes |  |
-| `download_count` | ``$INTEGER`` | Yes |  |
-| `format` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `language` | ``$ARRAY`` | Yes |  |
-| `media_type` | ``$STRING`` | Yes |  |
-| `subject` | ``$ARRAY`` | Yes |  |
-| `summary` | ``$ARRAY`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `translator` | ``$ARRAY`` | Yes |  |
+| `author` | `any[]` | Yes |  |
+| `bookshelf` | `any[]` | Yes |  |
+| `copyright` | `boolean` | Yes |  |
+| `download_count` | `number` | Yes |  |
+| `format` | `Record<string, any>` | Yes |  |
+| `id` | `number` | Yes |  |
+| `language` | `any[]` | Yes |  |
+| `media_type` | `string` | Yes |  |
+| `subject` | `any[]` | Yes |  |
+| `summary` | `any[]` | Yes |  |
+| `title` | `string` | Yes |  |
+| `translator` | `any[]` | Yes |  |
 
 ### Operations
 
@@ -144,7 +144,7 @@ const results = await client.Book().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Book().load({ id: 'book_id' })
+const result = await client.Book().load({ id: 1 })
 ```
 
 ### Common Methods

@@ -29,8 +29,7 @@ type BookLoadMatch struct {
 	Id int `json:"id"`
 }
 
-// BookListMatch mirrors the book fields as an all-optional match
-// filter (Go analog of Partial<Book>).
+// BookListMatch is the typed request payload for Book.ListTyped.
 type BookListMatch struct {
 	Author *[]any `json:"author,omitempty"`
 	Bookshelf *[]any `json:"bookshelf,omitempty"`

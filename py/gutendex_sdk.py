@@ -221,7 +221,7 @@ class GutendexSDK:
 
 
     def Book(self, data=None) -> "BookEntity":
-        """Entity factory: client.Book().list({}) / client.Book().load({"id": ...})."""
+        """Entity factory: client.Book().list() / client.Book().load({"id": ...})."""
         from entity.book_entity import BookEntity
         return BookEntity(self, data)
 

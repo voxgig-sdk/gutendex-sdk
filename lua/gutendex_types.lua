@@ -24,6 +24,18 @@
 ---@field id number
 
 ---@class BookListMatch
+---@field author? table
+---@field bookshelf? table
+---@field copyright? boolean
+---@field download_count? number
+---@field format? table
+---@field id? number
+---@field language? table
+---@field media_type? string
+---@field subject? table
+---@field summary? table
+---@field title? string
+---@field translator? table
 
 local M = {}
 

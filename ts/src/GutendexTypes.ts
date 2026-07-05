@@ -24,5 +24,18 @@ export interface BookLoadMatch {
   id: number
 }
 
-export type BookListMatch = Partial<Book>
+export interface BookListMatch {
+  author?: any[]
+  bookshelf?: any[]
+  copyright?: boolean
+  download_count?: number
+  format?: Record<string, any>
+  id?: number
+  language?: any[]
+  media_type?: string
+  subject?: any[]
+  summary?: any[]
+  title?: string
+  translator?: any[]
+}
 
