@@ -118,7 +118,7 @@ local results, err = client:Book():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Book():load({ id = "book_id" })
+local result, err = client:Book():load({ id = 1 })
 ```
 
 ### Common Methods

@@ -117,7 +117,7 @@ for book in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Book().load({"id": "book_id"})
+result = client.Book().load({"id": 1})
 ```
 
 ### Common Methods

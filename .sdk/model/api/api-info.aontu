@@ -15,9 +15,9 @@ main: {
           url: "https://gutendex.com"
         }
       ]
+      summary: "JSON web API for Project Gutenberg ebook metadata."
       title: "Gutendex"
       version: "1.0.0"
+      website: "https://gutendex.com"
     }
   }
-}
-

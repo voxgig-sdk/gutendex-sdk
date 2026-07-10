@@ -322,7 +322,7 @@ Create an instance: `book := client.Book(nil)`
 #### Example: Load
 
 ```go
-book, err := client.Book(nil).Load(map[string]any{"id": "book_id"}, nil)
+book, err := client.Book(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
