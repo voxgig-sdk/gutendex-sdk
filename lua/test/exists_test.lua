@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Gutendex SDK exists test
 
 local sdk = require("gutendex_sdk")
 
