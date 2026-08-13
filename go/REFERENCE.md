@@ -98,18 +98,18 @@ fmt.Println(book.GetName()) // "book"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `[]any` | Yes |  |
-| `bookshelf` | `[]any` | Yes |  |
+| `authors` | `[]any` | Yes |  |
+| `bookshelves` | `[]any` | Yes |  |
 | `copyright` | `bool` | Yes |  |
 | `download_count` | `int` | Yes |  |
-| `format` | `map[string]any` | Yes |  |
+| `formats` | `map[string]any` | Yes |  |
 | `id` | `int` | Yes |  |
-| `language` | `[]any` | Yes |  |
+| `languages` | `[]any` | Yes |  |
 | `media_type` | `string` | Yes |  |
-| `subject` | `[]any` | Yes |  |
-| `summary` | `[]any` | Yes |  |
+| `subjects` | `[]any` | Yes |  |
+| `summaries` | `[]any` | Yes |  |
 | `title` | `string` | Yes |  |
-| `translator` | `[]any` | Yes |  |
+| `translators` | `[]any` | Yes |  |
 
 ### Operations
 

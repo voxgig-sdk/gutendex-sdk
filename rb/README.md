@@ -37,7 +37,7 @@ begin
   # list returns an Array of Book records — iterate directly.
   books = client.Book.list
   books.each do |item|
-    puts "#{item["id"]} #{item["author"]}"
+    puts "#{item["id"]} #{item["authors"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Book record (raises on error).
+  # load returns the ENTITY — call data_get for the Book record (raises on error).
   book = client.Book.load({ "id" => 1 })
   puts book
 rescue => err
@@ -134,7 +134,8 @@ client = GutendexSDK.test({
   "entity" => { "book" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 book = client.Book.list()
 puts book
 ```
@@ -252,18 +253,18 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `bookshelf` |  |
+| `authors` |  |
+| `bookshelves` |  |
 | `copyright` |  |
 | `download_count` |  |
-| `format` |  |
+| `formats` |  |
 | `id` |  |
-| `language` |  |
+| `languages` |  |
 | `media_type` |  |
-| `subject` |  |
-| `summary` |  |
+| `subjects` |  |
+| `summaries` |  |
 | `title` |  |
-| `translator` |  |
+| `translators` |  |
 
 Operations: List, Load.
 
@@ -289,23 +290,23 @@ Create an instance: `book = client.Book`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `Array` |  |
-| `bookshelf` | `Array` |  |
+| `authors` | `Array` |  |
+| `bookshelves` | `Array` |  |
 | `copyright` | `Boolean` |  |
 | `download_count` | `Integer` |  |
-| `format` | `Hash` |  |
+| `formats` | `Hash` |  |
 | `id` | `Integer` |  |
-| `language` | `Array` |  |
+| `languages` | `Array` |  |
 | `media_type` | `String` |  |
-| `subject` | `Array` |  |
-| `summary` | `Array` |  |
+| `subjects` | `Array` |  |
+| `summaries` | `Array` |  |
 | `title` | `String` |  |
-| `translator` | `Array` |  |
+| `translators` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Book record (raises on error).
+# load returns the ENTITY — call data_get for the Book record (raises on error).
 book = client.Book.load({ "id" => 1 })
 ```
 

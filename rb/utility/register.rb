@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ GutendexUtility.registrar = ->(u) {
   u.prepare_params = GutendexUtilities::PrepareParams
   u.prepare_path = GutendexUtilities::PreparePath
   u.prepare_query = GutendexUtilities::PrepareQuery
+  u.graphql_body = GutendexUtilities::GraphqlBody
+  u.graphql_errors = GutendexUtilities::GraphqlErrors
   u.result_basic = GutendexUtilities::ResultBasic
   u.result_body = GutendexUtilities::ResultBody
   u.result_headers = GutendexUtilities::ResultHeaders

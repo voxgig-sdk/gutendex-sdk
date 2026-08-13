@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import GutendexSDK
-from core.error import GutendexError
-from core.result import GutendexResult
-from core.response import GutendexResponse
-from core.spec import GutendexSpec
-from feature.base_feature import GutendexBaseFeature
+from projectname_sdk.core.error import GutendexError
+from projectname_sdk.core.result import GutendexResult
+from projectname_sdk.core.response import GutendexResponse
+from projectname_sdk.core.spec import GutendexSpec
+from projectname_sdk.feature.base_feature import GutendexBaseFeature
 
 
 def _client():

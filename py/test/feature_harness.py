@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import GutendexControl
-from core.error import GutendexError
-from core.result import GutendexResult
-from core.spec import GutendexSpec
+from gutendex_sdk.config import make_config
+from gutendex_sdk.features import _make_feature
+from gutendex_sdk.core.control import GutendexControl
+from gutendex_sdk.core.error import GutendexError
+from gutendex_sdk.core.result import GutendexResult
+from gutendex_sdk.core.spec import GutendexSpec
 
 
 # True when this SDK was generated with the named feature.

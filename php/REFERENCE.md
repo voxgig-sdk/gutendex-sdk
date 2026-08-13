@@ -92,18 +92,18 @@ $book = $client->Book();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `array` | Yes |  |
-| `bookshelf` | `array` | Yes |  |
+| `authors` | `array` | Yes |  |
+| `bookshelves` | `array` | Yes |  |
 | `copyright` | `bool` | Yes |  |
 | `download_count` | `int` | Yes |  |
-| `format` | `array` | Yes |  |
+| `formats` | `array` | Yes |  |
 | `id` | `int` | Yes |  |
-| `language` | `array` | Yes |  |
+| `languages` | `array` | Yes |  |
 | `media_type` | `string` | Yes |  |
-| `subject` | `array` | Yes |  |
-| `summary` | `array` | Yes |  |
+| `subjects` | `array` | Yes |  |
+| `summaries` | `array` | Yes |  |
 | `title` | `string` | Yes |  |
-| `translator` | `array` | Yes |  |
+| `translators` | `array` | Yes |  |
 
 ### Operations
 

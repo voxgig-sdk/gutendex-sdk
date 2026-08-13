@@ -6,12 +6,12 @@ main: kit: entity: book: {
 
   fields: [
     {
-      name: "author"
+      name: "authors"
       req: true
       type: "`$ARRAY`"
     }
     {
-      name: "bookshelf"
+      name: "bookshelves"
       req: true
       type: "`$ARRAY`"
     }
@@ -26,7 +26,7 @@ main: kit: entity: book: {
       type: "`$INTEGER`"
     }
     {
-      name: "format"
+      name: "formats"
       req: true
       type: "`$OBJECT`"
     }
@@ -36,7 +36,7 @@ main: kit: entity: book: {
       type: "`$INTEGER`"
     }
     {
-      name: "language"
+      name: "languages"
       req: true
       type: "`$ARRAY`"
     }
@@ -46,12 +46,12 @@ main: kit: entity: book: {
       type: "`$STRING`"
     }
     {
-      name: "subject"
+      name: "subjects"
       req: true
       type: "`$ARRAY`"
     }
     {
-      name: "summary"
+      name: "summaries"
       req: true
       type: "`$ARRAY`"
     }
@@ -61,7 +61,7 @@ main: kit: entity: book: {
       type: "`$STRING`"
     }
     {
-      name: "translator"
+      name: "translators"
       req: true
       type: "`$ARRAY`"
     }
@@ -174,7 +174,7 @@ main: kit: entity: book: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.results`"
           }
         }
       ]

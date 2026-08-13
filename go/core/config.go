@@ -26,14 +26,14 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "author",
+						"name": "authors",
 						"req": true,
 						"type": "`$ARRAY`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "bookshelf",
+						"name": "bookshelves",
 						"req": true,
 						"type": "`$ARRAY`",
 						"index$": 1,
@@ -54,7 +54,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "format",
+						"name": "formats",
 						"req": true,
 						"type": "`$OBJECT`",
 						"index$": 4,
@@ -68,7 +68,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "language",
+						"name": "languages",
 						"req": true,
 						"type": "`$ARRAY`",
 						"index$": 6,
@@ -82,14 +82,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "subject",
+						"name": "subjects",
 						"req": true,
 						"type": "`$ARRAY`",
 						"index$": 8,
 					},
 					map[string]any{
 						"active": true,
-						"name": "summary",
+						"name": "summaries",
 						"req": true,
 						"type": "`$ARRAY`",
 						"index$": 9,
@@ -103,7 +103,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "translator",
+						"name": "translators",
 						"req": true,
 						"type": "`$ARRAY`",
 						"index$": 11,
@@ -202,6 +202,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/books",
 								"parts": []any{
@@ -222,12 +223,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.results`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 					"load": map[string]any{
 						"input": "data",
@@ -249,6 +249,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/books/{id}",
 								"parts": []any{
@@ -267,7 +268,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

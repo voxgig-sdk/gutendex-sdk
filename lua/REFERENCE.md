@@ -90,18 +90,18 @@ local book = client:Book(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `table` | Yes |  |
-| `bookshelf` | `table` | Yes |  |
+| `authors` | `table` | Yes |  |
+| `bookshelves` | `table` | Yes |  |
 | `copyright` | `boolean` | Yes |  |
 | `download_count` | `number` | Yes |  |
-| `format` | `table` | Yes |  |
+| `formats` | `table` | Yes |  |
 | `id` | `number` | Yes |  |
-| `language` | `table` | Yes |  |
+| `languages` | `table` | Yes |  |
 | `media_type` | `string` | Yes |  |
-| `subject` | `table` | Yes |  |
-| `summary` | `table` | Yes |  |
+| `subjects` | `table` | Yes |  |
+| `summaries` | `table` | Yes |  |
 | `title` | `string` | Yes |  |
-| `translator` | `table` | Yes |  |
+| `translators` | `table` | Yes |  |
 
 ### Operations
 

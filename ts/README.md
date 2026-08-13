@@ -35,7 +35,9 @@ const client = new GutendexSDK()
 
 ### 2. List book records
 
-`list()` resolves to an array of Book objects — iterate it directly:
+`list()` resolves to an array of Book ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const books = await client.Book().list()
@@ -133,7 +135,8 @@ Create a mock client for unit testing — no server required:
 const client = GutendexSDK.test()
 
 const book = await client.Book().list()
-// book is a bare entity populated with mock response data
+// book is the entity, populated with mock response data
+// — call book.data() for the record itself
 console.log(book)
 ```
 
@@ -299,18 +302,18 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `bookshelf` |  |
+| `authors` |  |
+| `bookshelves` |  |
 | `copyright` |  |
 | `download_count` |  |
-| `format` |  |
+| `formats` |  |
 | `id` |  |
-| `language` |  |
+| `languages` |  |
 | `media_type` |  |
-| `subject` |  |
-| `summary` |  |
+| `subjects` |  |
+| `summaries` |  |
 | `title` |  |
-| `translator` |  |
+| `translators` |  |
 
 Operations: list, load.
 
@@ -336,18 +339,18 @@ Create an instance: `const book = client.Book()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `any[]` |  |
-| `bookshelf` | `any[]` |  |
+| `authors` | `any[]` |  |
+| `bookshelves` | `any[]` |  |
 | `copyright` | `boolean` |  |
 | `download_count` | `number` |  |
-| `format` | `Record<string, any>` |  |
+| `formats` | `Record<string, any>` |  |
 | `id` | `number` |  |
-| `language` | `any[]` |  |
+| `languages` | `any[]` |  |
 | `media_type` | `string` |  |
-| `subject` | `any[]` |  |
-| `summary` | `any[]` |  |
+| `subjects` | `any[]` |  |
+| `summaries` | `any[]` |  |
 | `title` | `string` |  |
-| `translator` | `any[]` |  |
+| `translators` | `any[]` |  |
 
 #### Example: Load
 

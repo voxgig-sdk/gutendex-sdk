@@ -38,7 +38,7 @@ try {
     // list() returns an array of Book records — iterate directly.
     $books = $client->Book()->list();
     foreach ($books as $item) {
-        echo $item["id"] . " " . $item["author"] . "\n";
+        echo $item["id"] . " " . $item["authors"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Book record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Book record (throws on error).
     $book = $client->Book()->load(["id" => 1]);
     print_r($book);
 } catch (\Throwable $err) {
@@ -140,7 +140,8 @@ $client = GutendexSDK::test([
     "entity" => ["book" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $book = $client->Book()->list();
 print_r($book);
 ```
@@ -240,7 +241,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -262,18 +263,18 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `bookshelf` |  |
+| `authors` |  |
+| `bookshelves` |  |
 | `copyright` |  |
 | `download_count` |  |
-| `format` |  |
+| `formats` |  |
 | `id` |  |
-| `language` |  |
+| `languages` |  |
 | `media_type` |  |
-| `subject` |  |
-| `summary` |  |
+| `subjects` |  |
+| `summaries` |  |
 | `title` |  |
-| `translator` |  |
+| `translators` |  |
 
 Operations: List, Load.
 
@@ -299,23 +300,23 @@ Create an instance: `$book = $client->Book();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `array` |  |
-| `bookshelf` | `array` |  |
+| `authors` | `array` |  |
+| `bookshelves` | `array` |  |
 | `copyright` | `bool` |  |
 | `download_count` | `int` |  |
-| `format` | `array` |  |
+| `formats` | `array` |  |
 | `id` | `int` |  |
-| `language` | `array` |  |
+| `languages` | `array` |  |
 | `media_type` | `string` |  |
-| `subject` | `array` |  |
-| `summary` | `array` |  |
+| `subjects` | `array` |  |
+| `summaries` | `array` |  |
 | `title` | `string` |  |
-| `translator` | `array` |  |
+| `translators` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Book record (throws on error).
+// load() returns the ENTITY — call data_get() for the Book record (throws on error).
 $book = $client->Book()->load(["id" => 1]);
 ```
 

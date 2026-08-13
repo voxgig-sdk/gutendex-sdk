@@ -2,63 +2,63 @@
   "existing": {
     "book": {
       "BOOK00": {
-        "author": [],
-        "bookshelf": [],
+        "authors": [],
+        "bookshelves": [],
         "copyright": true,
         "download_count": "s7b",
-        "format": {},
+        "formats": {},
         "id": "BOOK00",
-        "language": [],
+        "languages": [],
         "media_type": "s7f",
-        "subject": [],
-        "summary": [],
+        "subjects": [],
+        "summaries": [],
         "title": "s82",
-        "translator": []
+        "translators": []
       },
       "BOOK01": {
-        "author": [],
-        "bookshelf": [],
+        "authors": [],
+        "bookshelves": [],
         "copyright": true,
         "download_count": "sf3",
-        "format": {},
+        "formats": {},
         "id": "BOOK01",
-        "language": [],
+        "languages": [],
         "media_type": "sf7",
-        "subject": [],
-        "summary": [],
+        "subjects": [],
+        "summaries": [],
         "title": "sfa",
-        "translator": []
+        "translators": []
       },
       "BOOK02": {
-        "author": [],
-        "bookshelf": [],
+        "authors": [],
+        "bookshelves": [],
         "copyright": true,
         "download_count": "s16b",
-        "format": {},
+        "formats": {},
         "id": "BOOK02",
-        "language": [],
+        "languages": [],
         "media_type": "s16f",
-        "subject": [],
-        "summary": [],
+        "subjects": [],
+        "summaries": [],
         "title": "s172",
-        "translator": []
+        "translators": []
       }
     }
   },
   "new": {
     "book": {
       "book_ref01": {
-        "author": [],
-        "bookshelf": [],
+        "authors": [],
+        "bookshelves": [],
         "copyright": true,
         "download_count": "s1e3",
-        "format": {},
-        "language": [],
+        "formats": {},
+        "languages": [],
         "media_type": "s1e7",
-        "subject": [],
-        "summary": [],
+        "subjects": [],
+        "summaries": [],
         "title": "s1ea",
-        "translator": []
+        "translators": []
       }
     }
   }

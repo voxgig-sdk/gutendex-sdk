@@ -27,14 +27,14 @@ module GutendexConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "author",
+              "name" => "authors",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 0,
             },
             {
               "active" => true,
-              "name" => "bookshelf",
+              "name" => "bookshelves",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 1,
@@ -55,7 +55,7 @@ module GutendexConfig
             },
             {
               "active" => true,
-              "name" => "format",
+              "name" => "formats",
               "req" => true,
               "type" => "`$OBJECT`",
               "index$" => 4,
@@ -69,7 +69,7 @@ module GutendexConfig
             },
             {
               "active" => true,
-              "name" => "language",
+              "name" => "languages",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 6,
@@ -83,14 +83,14 @@ module GutendexConfig
             },
             {
               "active" => true,
-              "name" => "subject",
+              "name" => "subjects",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 8,
             },
             {
               "active" => true,
-              "name" => "summary",
+              "name" => "summaries",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 9,
@@ -104,7 +104,7 @@ module GutendexConfig
             },
             {
               "active" => true,
-              "name" => "translator",
+              "name" => "translators",
               "req" => true,
               "type" => "`$ARRAY`",
               "index$" => 11,
@@ -203,6 +203,7 @@ module GutendexConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/books",
                   "parts" => [
@@ -223,7 +224,7 @@ module GutendexConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.results`",
                   },
                   "index$" => 0,
                 },
@@ -250,6 +251,7 @@ module GutendexConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/books/{id}",
                   "parts" => [

@@ -63,13 +63,13 @@ describe('BookEntity', async () => {
     const book_ref01_ent = client.Book()
     const book_ref01_match: any = {}
 
-    const book_ref01_list = await book_ref01_ent.list(book_ref01_match)
+    const book_ref01_list = (await book_ref01_ent.list(book_ref01_match)).map((e: any) => e.data())
 
 
     // LOAD
     const book_ref01_match_dt0: any = {}
     book_ref01_match_dt0.id = book_ref01_data.id
-    const book_ref01_data_dt0 = await book_ref01_ent.load(book_ref01_match_dt0)
+    const book_ref01_data_dt0 = (await book_ref01_ent.load(book_ref01_match_dt0)).data()
     assert(book_ref01_data_dt0.id === book_ref01_data.id)
 
 

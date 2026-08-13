@@ -10,10 +10,10 @@
 
 # Book entity data model.
 #
-# @!attribute [rw] author
+# @!attribute [rw] authors
 #   @return [Array]
 #
-# @!attribute [rw] bookshelf
+# @!attribute [rw] bookshelves
 #   @return [Array]
 #
 # @!attribute [rw] copyright
@@ -22,42 +22,42 @@
 # @!attribute [rw] download_count
 #   @return [Integer]
 #
-# @!attribute [rw] format
+# @!attribute [rw] formats
 #   @return [Hash]
 #
 # @!attribute [rw] id
 #   @return [Integer]
 #
-# @!attribute [rw] language
+# @!attribute [rw] languages
 #   @return [Array]
 #
 # @!attribute [rw] media_type
 #   @return [String]
 #
-# @!attribute [rw] subject
+# @!attribute [rw] subjects
 #   @return [Array]
 #
-# @!attribute [rw] summary
+# @!attribute [rw] summaries
 #   @return [Array]
 #
 # @!attribute [rw] title
 #   @return [String]
 #
-# @!attribute [rw] translator
+# @!attribute [rw] translators
 #   @return [Array]
 Book = Struct.new(
-  :author,
-  :bookshelf,
+  :authors,
+  :bookshelves,
   :copyright,
   :download_count,
-  :format,
+  :formats,
   :id,
-  :language,
+  :languages,
   :media_type,
-  :subject,
-  :summary,
+  :subjects,
+  :summaries,
   :title,
-  :translator,
+  :translators,
   keyword_init: true
 )
 
@@ -72,10 +72,10 @@ BookLoadMatch = Struct.new(
 
 # Request payload for Book#list.
 #
-# @!attribute [rw] author
+# @!attribute [rw] authors
 #   @return [Array, nil]
 #
-# @!attribute [rw] bookshelf
+# @!attribute [rw] bookshelves
 #   @return [Array, nil]
 #
 # @!attribute [rw] copyright
@@ -84,42 +84,42 @@ BookLoadMatch = Struct.new(
 # @!attribute [rw] download_count
 #   @return [Integer, nil]
 #
-# @!attribute [rw] format
+# @!attribute [rw] formats
 #   @return [Hash, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer, nil]
 #
-# @!attribute [rw] language
+# @!attribute [rw] languages
 #   @return [Array, nil]
 #
 # @!attribute [rw] media_type
 #   @return [String, nil]
 #
-# @!attribute [rw] subject
+# @!attribute [rw] subjects
 #   @return [Array, nil]
 #
-# @!attribute [rw] summary
+# @!attribute [rw] summaries
 #   @return [Array, nil]
 #
 # @!attribute [rw] title
 #   @return [String, nil]
 #
-# @!attribute [rw] translator
+# @!attribute [rw] translators
 #   @return [Array, nil]
 BookListMatch = Struct.new(
-  :author,
-  :bookshelf,
+  :authors,
+  :bookshelves,
   :copyright,
   :download_count,
-  :format,
+  :formats,
   :id,
-  :language,
+  :languages,
   :media_type,
-  :subject,
-  :summary,
+  :subjects,
+  :summaries,
   :title,
-  :translator,
+  :translators,
   keyword_init: true
 )
 

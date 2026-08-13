@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Gutendex SDK exists test
 
 import pytest
 from gutendex_sdk import GutendexSDK

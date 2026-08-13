@@ -241,18 +241,18 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `bookshelf` |  |
+| `authors` |  |
+| `bookshelves` |  |
 | `copyright` |  |
 | `download_count` |  |
-| `format` |  |
+| `formats` |  |
 | `id` |  |
-| `language` |  |
+| `languages` |  |
 | `media_type` |  |
-| `subject` |  |
-| `summary` |  |
+| `subjects` |  |
+| `summaries` |  |
 | `title` |  |
-| `translator` |  |
+| `translators` |  |
 
 Operations: List, Load.
 
@@ -278,18 +278,18 @@ Create an instance: `local book = client:Book(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `table` |  |
-| `bookshelf` | `table` |  |
+| `authors` | `table` |  |
+| `bookshelves` | `table` |  |
 | `copyright` | `boolean` |  |
 | `download_count` | `number` |  |
-| `format` | `table` |  |
+| `formats` | `table` |  |
 | `id` | `number` |  |
-| `language` | `table` |  |
+| `languages` | `table` |  |
 | `media_type` | `string` |  |
-| `subject` | `table` |  |
-| `summary` | `table` |  |
+| `subjects` | `table` |  |
+| `summaries` | `table` |  |
 | `title` | `string` |  |
-| `translator` | `table` |  |
+| `translators` | `table` |  |
 
 #### Example: Load
 

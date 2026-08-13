@@ -93,18 +93,18 @@ book = client.Book
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `Array` | Yes |  |
-| `bookshelf` | `Array` | Yes |  |
+| `authors` | `Array` | Yes |  |
+| `bookshelves` | `Array` | Yes |  |
 | `copyright` | `Boolean` | Yes |  |
 | `download_count` | `Integer` | Yes |  |
-| `format` | `Hash` | Yes |  |
+| `formats` | `Hash` | Yes |  |
 | `id` | `Integer` | Yes |  |
-| `language` | `Array` | Yes |  |
+| `languages` | `Array` | Yes |  |
 | `media_type` | `String` | Yes |  |
-| `subject` | `Array` | Yes |  |
-| `summary` | `Array` | Yes |  |
+| `subjects` | `Array` | Yes |  |
+| `summaries` | `Array` | Yes |  |
 | `title` | `String` | Yes |  |
-| `translator` | `Array` | Yes |  |
+| `translators` | `Array` | Yes |  |
 
 ### Operations
 

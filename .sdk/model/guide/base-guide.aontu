@@ -8,6 +8,7 @@ guide: {
   entity: book: {
     path: "/books": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
     }
     path: "/books/{id}": {
       op: load: method: *GET

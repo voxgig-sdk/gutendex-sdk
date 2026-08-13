@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Gutendex',
   }
 
 
@@ -56,14 +56,14 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "author",
+          "name": "authors",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "bookshelf",
+          "name": "bookshelves",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 1
@@ -84,7 +84,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "format",
+          "name": "formats",
           "req": true,
           "type": "`$OBJECT`",
           "index$": 4
@@ -98,7 +98,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "language",
+          "name": "languages",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 6
@@ -112,14 +112,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "subject",
+          "name": "subjects",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "summary",
+          "name": "summaries",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 9
@@ -133,7 +133,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "translator",
+          "name": "translators",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 11
@@ -232,6 +232,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/books",
               "parts": [
@@ -252,7 +253,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.results`"
               },
               "index$": 0
             }
@@ -279,6 +280,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/books/{id}",
               "parts": [

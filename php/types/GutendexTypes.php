@@ -15,18 +15,18 @@ declare(strict_types=1);
 /** Book entity data model. */
 class Book
 {
-    public array $author;
-    public array $bookshelf;
+    public array $authors;
+    public array $bookshelves;
     public bool $copyright;
     public int $download_count;
-    public array $format;
+    public array $formats;
     public int $id;
-    public array $language;
+    public array $languages;
     public string $media_type;
-    public array $subject;
-    public array $summary;
+    public array $subjects;
+    public array $summaries;
     public string $title;
-    public array $translator;
+    public array $translators;
 }
 
 /** Request payload for Book#load. */
@@ -38,17 +38,17 @@ class BookLoadMatch
 /** Request payload for Book#list. */
 class BookListMatch
 {
-    public ?array $author = null;
-    public ?array $bookshelf = null;
+    public ?array $authors = null;
+    public ?array $bookshelves = null;
     public ?bool $copyright = null;
     public ?int $download_count = null;
-    public ?array $format = null;
+    public ?array $formats = null;
     public ?int $id = null;
-    public ?array $language = null;
+    public ?array $languages = null;
     public ?string $media_type = null;
-    public ?array $subject = null;
-    public ?array $summary = null;
+    public ?array $subjects = null;
+    public ?array $summaries = null;
     public ?string $title = null;
-    public ?array $translator = null;
+    public ?array $translators = null;
 }
 

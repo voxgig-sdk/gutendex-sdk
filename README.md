@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = GutendexSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = GutendexSDK.test({
+  entity: {
+    book: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const books = await client.Book().list()
-// books is an array of bare Book records populated with mock data
+// books is an array of Book entities, populated with mock data
+// — call books[0].data() for the record itself
 console.log(books)
 ```
 
@@ -110,7 +119,7 @@ import { GutendexSDK } from '@voxgig-sdk/gutendex'
 
 const client = new GutendexSDK()
 
-// List all books (returns Book[])
+// List all books (returns BookEntity[] — .data() for the record)
 const books = await client.Book().list()
 for (const book of books) {
   console.log(book)
@@ -191,7 +200,7 @@ $client = new GutendexSDK();
 $books = $client->Book()->list();
 print_r($books);
 
-// Load a specific book (returns the bare record; throws on error)
+// Load a specific book (returns the ENTITY; call data_get() for the record; throws on error)
 $book = $client->Book()->load(["id" => 1]);
 print_r($book);
 ```
@@ -222,7 +231,7 @@ client = GutendexSDK.new
 books = client.Book.list
 puts books
 
-# Load a specific book (returns the bare record; raises on error)
+# Load a specific book (returns the ENTITY; call data_get for the record)
 book = client.Book.load({ "id" => 1 })
 puts book
 ```
@@ -359,6 +368,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/garethbjohnson/gutendex](https://github.com/garethbjohnson/gutendex)
 

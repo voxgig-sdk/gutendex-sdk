@@ -6,22 +6,26 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/voxgig-sdk/gutendex-sdk/go/core"
+)
 
 // Book is the typed data model for the book entity.
 type Book struct {
-	Author []any `json:"author"`
-	Bookshelf []any `json:"bookshelf"`
+	Authors []any `json:"authors"`
+	Bookshelves []any `json:"bookshelves"`
 	Copyright bool `json:"copyright"`
 	DownloadCount int `json:"download_count"`
-	Format map[string]any `json:"format"`
+	Formats map[string]any `json:"formats"`
 	Id int `json:"id"`
-	Language []any `json:"language"`
+	Languages []any `json:"languages"`
 	MediaType string `json:"media_type"`
-	Subject []any `json:"subject"`
-	Summary []any `json:"summary"`
+	Subjects []any `json:"subjects"`
+	Summaries []any `json:"summaries"`
 	Title string `json:"title"`
-	Translator []any `json:"translator"`
+	Translators []any `json:"translators"`
 }
 
 // BookLoadMatch is the typed request payload for Book.LoadTyped.
@@ -31,18 +35,18 @@ type BookLoadMatch struct {
 
 // BookListMatch is the typed request payload for Book.ListTyped.
 type BookListMatch struct {
-	Author *[]any `json:"author,omitempty"`
-	Bookshelf *[]any `json:"bookshelf,omitempty"`
+	Authors *[]any `json:"authors,omitempty"`
+	Bookshelves *[]any `json:"bookshelves,omitempty"`
 	Copyright *bool `json:"copyright,omitempty"`
 	DownloadCount *int `json:"download_count,omitempty"`
-	Format *map[string]any `json:"format,omitempty"`
+	Formats *map[string]any `json:"formats,omitempty"`
 	Id *int `json:"id,omitempty"`
-	Language *[]any `json:"language,omitempty"`
+	Languages *[]any `json:"languages,omitempty"`
 	MediaType *string `json:"media_type,omitempty"`
-	Subject *[]any `json:"subject,omitempty"`
-	Summary *[]any `json:"summary,omitempty"`
+	Subjects *[]any `json:"subjects,omitempty"`
+	Summaries *[]any `json:"summaries,omitempty"`
 	Title *string `json:"title,omitempty"`
-	Translator *[]any `json:"translator,omitempty"`
+	Translators *[]any `json:"translators,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
@@ -57,12 +61,26 @@ func asMap(v any) map[string]any {
 	return out
 }
 
-// typedFrom decodes a runtime value (a map[string]any produced by the op
-// pipeline) into a typed model T via a JSON round-trip. On any error it
-// returns the zero value of T; the op's own (value, error) tuple carries the
-// real error.
+// entityData unwraps an entity to its data map.
+//
+// Operations resolve to the ENTITY, not the raw data (see AGENTS.md), and an
+// entity's fields are UNEXPORTED — marshalling one directly yields `{}`, so
+// every typed accessor would silently hand back a zero-valued struct. The
+// typed boundary therefore takes the data hop first.
+func entityData(v any) any {
+	if ent, ok := v.(core.Entity); ok {
+		return ent.Data()
+	}
+	return v
+}
+
+// typedFrom decodes a runtime value (an entity, or the map[string]any the op
+// pipeline produced) into a typed model T via a JSON round-trip. On any error
+// it returns the zero value of T; the op's own (value, error) tuple carries
+// the real error.
 func typedFrom[T any](v any) T {
 	var out T
+	v = entityData(v)
 	if v == nil {
 		return out
 	}
@@ -74,12 +92,20 @@ func typedFrom[T any](v any) T {
 	return out
 }
 
-// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
-// slice []T via a JSON round-trip, for list ops.
+// typedSliceFrom decodes a runtime list value into a typed slice []T via a
+// JSON round-trip, for list ops. `list` resolves to a slice of ENTITY
+// instances, so each element takes the data hop.
 func typedSliceFrom[T any](v any) []T {
 	var out []T
 	if v == nil {
 		return out
+	}
+	if list, ok := v.([]any); ok {
+		unwrapped := make([]any, 0, len(list))
+		for _, item := range list {
+			unwrapped = append(unwrapped, entityData(item))
+		}
+		v = unwrapped
 	}
 	b, err := json.Marshal(v)
 	if err != nil {

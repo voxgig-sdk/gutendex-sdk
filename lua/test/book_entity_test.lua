@@ -97,7 +97,7 @@ describe("BookEntity", function()
     }
     local book_ref01_data_dt0_loaded, err = book_ref01_ent:load(book_ref01_match_dt0, nil)
     assert.is_nil(err)
-    local book_ref01_data_dt0_load_result = helpers.to_map(book_ref01_data_dt0_loaded)
+    local book_ref01_data_dt0_load_result = helpers.to_map(type(book_ref01_data_dt0_loaded) == 'table' and book_ref01_data_dt0_loaded.data_get and book_ref01_data_dt0_loaded:data_get() or book_ref01_data_dt0_loaded)
     assert.is_not_nil(book_ref01_data_dt0_load_result)
     assert.are.equal(book_ref01_data_dt0_load_result["id"], book_ref01_data["id"])
 

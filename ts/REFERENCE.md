@@ -116,18 +116,18 @@ const book = client.Book()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `any[]` | Yes |  |
-| `bookshelf` | `any[]` | Yes |  |
+| `authors` | `any[]` | Yes |  |
+| `bookshelves` | `any[]` | Yes |  |
 | `copyright` | `boolean` | Yes |  |
 | `download_count` | `number` | Yes |  |
-| `format` | `Record<string, any>` | Yes |  |
+| `formats` | `Record<string, any>` | Yes |  |
 | `id` | `number` | Yes |  |
-| `language` | `any[]` | Yes |  |
+| `languages` | `any[]` | Yes |  |
 | `media_type` | `string` | Yes |  |
-| `subject` | `any[]` | Yes |  |
-| `summary` | `any[]` | Yes |  |
+| `subjects` | `any[]` | Yes |  |
+| `summaries` | `any[]` | Yes |  |
 | `title` | `string` | Yes |  |
-| `translator` | `any[]` | Yes |  |
+| `translators` | `any[]` | Yes |  |
 
 ### Operations
 

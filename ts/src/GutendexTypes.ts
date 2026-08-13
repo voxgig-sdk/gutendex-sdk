@@ -6,18 +6,18 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Book {
-  author: any[]
-  bookshelf: any[]
+  authors: any[]
+  bookshelves: any[]
   copyright: boolean
   download_count: number
-  format: Record<string, any>
+  formats: Record<string, any>
   id: number
-  language: any[]
+  languages: any[]
   media_type: string
-  subject: any[]
-  summary: any[]
+  subjects: any[]
+  summaries: any[]
   title: string
-  translator: any[]
+  translators: any[]
 }
 
 export interface BookLoadMatch {
@@ -25,17 +25,17 @@ export interface BookLoadMatch {
 }
 
 export interface BookListMatch {
-  author?: any[]
-  bookshelf?: any[]
+  authors?: any[]
+  bookshelves?: any[]
   copyright?: boolean
   download_count?: number
-  format?: Record<string, any>
+  formats?: Record<string, any>
   id?: number
-  language?: any[]
+  languages?: any[]
   media_type?: string
-  subject?: any[]
-  summary?: any[]
+  subjects?: any[]
+  summaries?: any[]
   title?: string
-  translator?: any[]
+  translators?: any[]
 }
 

@@ -87,18 +87,18 @@ book = client.Book()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `list` | Yes |  |
-| `bookshelf` | `list` | Yes |  |
+| `authors` | `list` | Yes |  |
+| `bookshelves` | `list` | Yes |  |
 | `copyright` | `bool` | Yes |  |
 | `download_count` | `int` | Yes |  |
-| `format` | `dict` | Yes |  |
+| `formats` | `dict` | Yes |  |
 | `id` | `int` | Yes |  |
-| `language` | `list` | Yes |  |
+| `languages` | `list` | Yes |  |
 | `media_type` | `str` | Yes |  |
-| `subject` | `list` | Yes |  |
-| `summary` | `list` | Yes |  |
+| `subjects` | `list` | Yes |  |
+| `summaries` | `list` | Yes |  |
 | `title` | `str` | Yes |  |
-| `translator` | `list` | Yes |  |
+| `translators` | `list` | Yes |  |
 
 ### Operations
 

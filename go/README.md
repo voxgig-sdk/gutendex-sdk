@@ -269,18 +269,18 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"author"` |  |
-| `"bookshelf"` |  |
+| `"authors"` |  |
+| `"bookshelves"` |  |
 | `"copyright"` |  |
 | `"download_count"` |  |
-| `"format"` |  |
+| `"formats"` |  |
 | `"id"` |  |
-| `"language"` |  |
+| `"languages"` |  |
 | `"media_type"` |  |
-| `"subject"` |  |
-| `"summary"` |  |
+| `"subjects"` |  |
+| `"summaries"` |  |
 | `"title"` |  |
-| `"translator"` |  |
+| `"translators"` |  |
 
 Operations: List, Load.
 
@@ -306,18 +306,18 @@ Create an instance: `book := client.Book(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `[]any` |  |
-| `bookshelf` | `[]any` |  |
+| `authors` | `[]any` |  |
+| `bookshelves` | `[]any` |  |
 | `copyright` | `bool` |  |
 | `download_count` | `int` |  |
-| `format` | `map[string]any` |  |
+| `formats` | `map[string]any` |  |
 | `id` | `int` |  |
-| `language` | `[]any` |  |
+| `languages` | `[]any` |  |
 | `media_type` | `string` |  |
-| `subject` | `[]any` |  |
-| `summary` | `[]any` |  |
+| `subjects` | `[]any` |  |
+| `summaries` | `[]any` |  |
 | `title` | `string` |  |
-| `translator` | `[]any` |  |
+| `translators` | `[]any` |  |
 
 #### Example: Load
 

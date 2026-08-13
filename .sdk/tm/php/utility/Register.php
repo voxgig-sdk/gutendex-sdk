@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ GutendexUtility::setRegistrar(function (GutendexUtility $u): void {
     $u->prepare_params = [GutendexPrepareParams::class, 'call'];
     $u->prepare_path = [GutendexPreparePath::class, 'call'];
     $u->prepare_query = [GutendexPrepareQuery::class, 'call'];
+    $u->graphql_body = [GutendexGraphql::class, 'body'];
+    $u->graphql_errors = [GutendexGraphql::class, 'errors'];
     $u->result_basic = [GutendexResultBasic::class, 'call'];
     $u->result_body = [GutendexResultBody::class, 'call'];
     $u->result_headers = [GutendexResultHeaders::class, 'call'];

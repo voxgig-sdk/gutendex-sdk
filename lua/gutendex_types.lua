@@ -7,35 +7,35 @@
 -- edit by hand.
 
 ---@class Book
----@field author table
----@field bookshelf table
+---@field authors table
+---@field bookshelves table
 ---@field copyright boolean
 ---@field download_count number
----@field format table
+---@field formats table
 ---@field id number
----@field language table
+---@field languages table
 ---@field media_type string
----@field subject table
----@field summary table
+---@field subjects table
+---@field summaries table
 ---@field title string
----@field translator table
+---@field translators table
 
 ---@class BookLoadMatch
 ---@field id number
 
 ---@class BookListMatch
----@field author? table
----@field bookshelf? table
+---@field authors? table
+---@field bookshelves? table
 ---@field copyright? boolean
 ---@field download_count? number
----@field format? table
+---@field formats? table
 ---@field id? number
----@field language? table
+---@field languages? table
 ---@field media_type? string
----@field subject? table
----@field summary? table
+---@field subjects? table
+---@field summaries? table
 ---@field title? string
----@field translator? table
+---@field translators? table
 
 local M = {}
 

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from gutendex_sdk.utility.voxgig_struct import voxgig_struct as vs
 from gutendex_sdk import GutendexSDK
-from core import helpers
+from gutendex_sdk.core import helpers
 from test import runner
 
 

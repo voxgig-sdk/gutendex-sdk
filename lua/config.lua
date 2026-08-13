@@ -26,14 +26,14 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "author",
+            ["name"] = "authors",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "bookshelf",
+            ["name"] = "bookshelves",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 1,
@@ -54,7 +54,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "format",
+            ["name"] = "formats",
             ["req"] = true,
             ["type"] = "`$OBJECT`",
             ["index$"] = 4,
@@ -68,7 +68,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "language",
+            ["name"] = "languages",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 6,
@@ -82,14 +82,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "subject",
+            ["name"] = "subjects",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 8,
           },
           {
             ["active"] = true,
-            ["name"] = "summary",
+            ["name"] = "summaries",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 9,
@@ -103,7 +103,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "translator",
+            ["name"] = "translators",
             ["req"] = true,
             ["type"] = "`$ARRAY`",
             ["index$"] = 11,
@@ -202,6 +202,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/books",
                 ["parts"] = {
@@ -222,7 +223,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.results`",
                 },
                 ["index$"] = 0,
               },
@@ -249,6 +250,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/books/{id}",
                 ["parts"] = {
