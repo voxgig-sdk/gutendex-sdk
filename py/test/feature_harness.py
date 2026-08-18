@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from gutendex_sdk.config import make_config
+from gutendex_sdk.config import shared_config
 from gutendex_sdk.features import _make_feature
 from gutendex_sdk.core.control import GutendexControl
 from gutendex_sdk.core.error import GutendexError
@@ -24,7 +24,7 @@ from gutendex_sdk.core.spec import GutendexSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

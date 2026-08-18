@@ -1,6 +1,20 @@
 # Gutendex SDK configuration
 
 module GutendexConfig
+  # Return the process-wide config, built once on first use. The SDK reads
+  # the config on every request and never writes to it, so one instance is
+  # shared by every client rather than rebuilt per client.
+  #
+  # The returned hash is shared: treat it as read-only. Callers that need to
+  # mutate should use make_config, which always returns a fresh copy.
+  def self.shared_config
+    @shared_config ||= make_config
+  end
+
+
+  # Build a fresh, fully materialised config hash. Every call rebuilds the
+  # whole structure, so prefer shared_config unless you need a private copy
+  # you intend to mutate.
   def self.make_config
     {
       "main" => {
@@ -26,88 +40,64 @@ module GutendexConfig
         "book" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "authors",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "bookshelves",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "copyright",
               "req" => true,
               "type" => "`$BOOLEAN`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "download_count",
               "req" => true,
               "type" => "`$INTEGER`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "formats",
               "req" => true,
               "type" => "`$OBJECT`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "id",
               "req" => true,
               "type" => "`$INTEGER`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "languages",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 6,
             },
             {
-              "active" => true,
               "name" => "media_type",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 7,
             },
             {
-              "active" => true,
               "name" => "subjects",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 8,
             },
             {
-              "active" => true,
               "name" => "summaries",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 9,
             },
             {
-              "active" => true,
               "name" => "title",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 10,
             },
             {
-              "active" => true,
               "name" => "translators",
               "req" => true,
               "type" => "`$ARRAY`",
-              "index$" => 11,
             },
           ],
           "name" => "book",
@@ -117,88 +107,69 @@ module GutendexConfig
               "name" => "list",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "query" => [
                       {
-                        "active" => true,
                         "example" => 1899,
                         "kind" => "query",
                         "name" => "author_year_end",
                         "orig" => "author_year_end",
-                        "reqd" => false,
                         "type" => "`$INTEGER`",
                       },
                       {
-                        "active" => true,
                         "example" => 1800,
                         "kind" => "query",
                         "name" => "author_year_start",
                         "orig" => "author_year_start",
-                        "reqd" => false,
                         "type" => "`$INTEGER`",
                       },
                       {
-                        "active" => true,
                         "example" => "true,false",
                         "kind" => "query",
                         "name" => "copyright",
                         "orig" => "copyright",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => "11,12,13",
                         "kind" => "query",
                         "name" => "ids",
                         "orig" => "ids",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => "en,fr",
                         "kind" => "query",
                         "name" => "language",
                         "orig" => "language",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => "text/html",
                         "kind" => "query",
                         "name" => "mime_type",
                         "orig" => "mime_type",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => "dickens great",
                         "kind" => "query",
                         "name" => "search",
                         "orig" => "search",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => "popular",
                         "kind" => "query",
                         "name" => "sort",
                         "orig" => "sort",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                       {
-                        "active" => true,
                         "example" => "children",
                         "kind" => "query",
                         "name" => "topic",
                         "orig" => "topic",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -226,28 +197,23 @@ module GutendexConfig
                     "req" => "`reqdata`",
                     "res" => "`body.results`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "list",
             },
             "load" => {
               "input" => "data",
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "params" => [
                       {
-                        "active" => true,
                         "example" => 84,
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
-                        "index$" => 0,
                       },
                     ],
                   },
@@ -267,10 +233,8 @@ module GutendexConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {

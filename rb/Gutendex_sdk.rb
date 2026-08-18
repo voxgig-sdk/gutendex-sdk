@@ -28,7 +28,7 @@ class GutendexSDK
     utility = GutendexUtility.new
     @_utility = utility
 
-    config = GutendexConfig.make_config
+    config = GutendexConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

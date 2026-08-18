@@ -23,7 +23,7 @@ func NewGutendexSDK(options map[string]any) *GutendexSDK {
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,
