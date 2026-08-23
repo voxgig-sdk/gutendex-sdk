@@ -90,18 +90,18 @@ local book = client:Book(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `authors` | `table` | Yes |  |
-| `bookshelves` | `table` | Yes |  |
-| `copyright` | `boolean` | Yes |  |
-| `download_count` | `number` | Yes |  |
-| `formats` | `table` | Yes |  |
-| `id` | `number` | Yes |  |
-| `languages` | `table` | Yes |  |
-| `media_type` | `string` | Yes |  |
-| `subjects` | `table` | Yes |  |
-| `summaries` | `table` | Yes |  |
-| `title` | `string` | Yes |  |
-| `translators` | `table` | Yes |  |
+| `authors` | `table` | Yes | List of authors |
+| `bookshelves` | `table` | Yes | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `boolean` | Yes | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `number` | Yes | Number of downloads from Project Gutenberg |
+| `formats` | `table` | Yes | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `number` | Yes | Project Gutenberg ID number |
+| `languages` | `table` | Yes | List of two-character language codes |
+| `media_type` | `string` | Yes | Media type of the book |
+| `subjects` | `table` | Yes | List of subjects associated with the book |
+| `summaries` | `table` | Yes | Book summaries |
+| `title` | `string` | Yes | Book title |
+| `translators` | `table` | Yes | List of translators |
 
 ### Operations
 

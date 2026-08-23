@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Gutendex",
+			"slug": "gutendex",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,61 +37,73 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "authors",
 						"req": true,
+						"short": "List of authors",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "bookshelves",
 						"req": true,
+						"short": "Project Gutenberg bookshelves the book belongs to",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "copyright",
 						"req": true,
+						"short": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "download_count",
 						"req": true,
+						"short": "Number of downloads from Project Gutenberg",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "formats",
 						"req": true,
+						"short": "Available formats for the book, where keys are MIME types and values are download URLs",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Project Gutenberg ID number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "languages",
 						"req": true,
+						"short": "List of two-character language codes",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "media_type",
 						"req": true,
+						"short": "Media type of the book",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "subjects",
 						"req": true,
+						"short": "List of subjects associated with the book",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "summaries",
 						"req": true,
+						"short": "Book summaries",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
 						"req": true,
+						"short": "Book title",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "translators",
 						"req": true,
+						"short": "List of translators",
 						"type": "`$ARRAY`",
 					},
 				},

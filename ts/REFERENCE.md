@@ -116,18 +116,18 @@ const book = client.Book()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `authors` | `any[]` | Yes |  |
-| `bookshelves` | `any[]` | Yes |  |
-| `copyright` | `boolean` | Yes |  |
-| `download_count` | `number` | Yes |  |
-| `formats` | `Record<string, any>` | Yes |  |
-| `id` | `number` | Yes |  |
-| `languages` | `any[]` | Yes |  |
-| `media_type` | `string` | Yes |  |
-| `subjects` | `any[]` | Yes |  |
-| `summaries` | `any[]` | Yes |  |
-| `title` | `string` | Yes |  |
-| `translators` | `any[]` | Yes |  |
+| `authors` | `any[]` | Yes | List of authors |
+| `bookshelves` | `any[]` | Yes | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `boolean` | Yes | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `number` | Yes | Number of downloads from Project Gutenberg |
+| `formats` | `Record<string, any>` | Yes | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `number` | Yes | Project Gutenberg ID number |
+| `languages` | `any[]` | Yes | List of two-character language codes |
+| `media_type` | `string` | Yes | Media type of the book |
+| `subjects` | `any[]` | Yes | List of subjects associated with the book |
+| `summaries` | `any[]` | Yes | Book summaries |
+| `title` | `string` | Yes | Book title |
+| `translators` | `any[]` | Yes | List of translators |
 
 ### Operations
 

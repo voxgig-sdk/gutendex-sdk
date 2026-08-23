@@ -241,18 +241,18 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `authors` |  |
-| `bookshelves` |  |
-| `copyright` |  |
-| `download_count` |  |
-| `formats` |  |
-| `id` |  |
-| `languages` |  |
-| `media_type` |  |
-| `subjects` |  |
-| `summaries` |  |
-| `title` |  |
-| `translators` |  |
+| `authors` | List of authors |
+| `bookshelves` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | Number of downloads from Project Gutenberg |
+| `formats` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | Project Gutenberg ID number |
+| `languages` | List of two-character language codes |
+| `media_type` | Media type of the book |
+| `subjects` | List of subjects associated with the book |
+| `summaries` | Book summaries |
+| `title` | Book title |
+| `translators` | List of translators |
 
 Operations: List, Load.
 
@@ -278,18 +278,18 @@ Create an instance: `local book = client:Book(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `authors` | `table` |  |
-| `bookshelves` | `table` |  |
-| `copyright` | `boolean` |  |
-| `download_count` | `number` |  |
-| `formats` | `table` |  |
-| `id` | `number` |  |
-| `languages` | `table` |  |
-| `media_type` | `string` |  |
-| `subjects` | `table` |  |
-| `summaries` | `table` |  |
-| `title` | `string` |  |
-| `translators` | `table` |  |
+| `authors` | `table` | List of authors |
+| `bookshelves` | `table` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `boolean` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `number` | Number of downloads from Project Gutenberg |
+| `formats` | `table` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `number` | Project Gutenberg ID number |
+| `languages` | `table` | List of two-character language codes |
+| `media_type` | `string` | Media type of the book |
+| `subjects` | `table` | List of subjects associated with the book |
+| `summaries` | `table` | Book summaries |
+| `title` | `string` | Book title |
+| `translators` | `table` | List of translators |
 
 #### Example: Load
 

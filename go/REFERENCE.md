@@ -98,18 +98,18 @@ fmt.Println(book.GetName()) // "book"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `authors` | `[]any` | Yes |  |
-| `bookshelves` | `[]any` | Yes |  |
-| `copyright` | `bool` | Yes |  |
-| `download_count` | `int` | Yes |  |
-| `formats` | `map[string]any` | Yes |  |
-| `id` | `int` | Yes |  |
-| `languages` | `[]any` | Yes |  |
-| `media_type` | `string` | Yes |  |
-| `subjects` | `[]any` | Yes |  |
-| `summaries` | `[]any` | Yes |  |
-| `title` | `string` | Yes |  |
-| `translators` | `[]any` | Yes |  |
+| `authors` | `[]any` | Yes | List of authors |
+| `bookshelves` | `[]any` | Yes | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `bool` | Yes | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `int` | Yes | Number of downloads from Project Gutenberg |
+| `formats` | `map[string]any` | Yes | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `int` | Yes | Project Gutenberg ID number |
+| `languages` | `[]any` | Yes | List of two-character language codes |
+| `media_type` | `string` | Yes | Media type of the book |
+| `subjects` | `[]any` | Yes | List of subjects associated with the book |
+| `summaries` | `[]any` | Yes | Book summaries |
+| `title` | `string` | Yes | Book title |
+| `translators` | `[]any` | Yes | List of translators |
 
 ### Operations
 

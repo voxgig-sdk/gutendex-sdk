@@ -93,18 +93,18 @@ book = client.Book
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `authors` | `Array` | Yes |  |
-| `bookshelves` | `Array` | Yes |  |
-| `copyright` | `Boolean` | Yes |  |
-| `download_count` | `Integer` | Yes |  |
-| `formats` | `Hash` | Yes |  |
-| `id` | `Integer` | Yes |  |
-| `languages` | `Array` | Yes |  |
-| `media_type` | `String` | Yes |  |
-| `subjects` | `Array` | Yes |  |
-| `summaries` | `Array` | Yes |  |
-| `title` | `String` | Yes |  |
-| `translators` | `Array` | Yes |  |
+| `authors` | `Array` | Yes | List of authors |
+| `bookshelves` | `Array` | Yes | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `Boolean` | Yes | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `Integer` | Yes | Number of downloads from Project Gutenberg |
+| `formats` | `Hash` | Yes | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `Integer` | Yes | Project Gutenberg ID number |
+| `languages` | `Array` | Yes | List of two-character language codes |
+| `media_type` | `String` | Yes | Media type of the book |
+| `subjects` | `Array` | Yes | List of subjects associated with the book |
+| `summaries` | `Array` | Yes | Book summaries |
+| `title` | `String` | Yes | Book title |
+| `translators` | `Array` | Yes | List of translators |
 
 ### Operations
 

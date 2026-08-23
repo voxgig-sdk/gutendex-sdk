@@ -263,18 +263,18 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `authors` |  |
-| `bookshelves` |  |
-| `copyright` |  |
-| `download_count` |  |
-| `formats` |  |
-| `id` |  |
-| `languages` |  |
-| `media_type` |  |
-| `subjects` |  |
-| `summaries` |  |
-| `title` |  |
-| `translators` |  |
+| `authors` | List of authors |
+| `bookshelves` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | Number of downloads from Project Gutenberg |
+| `formats` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | Project Gutenberg ID number |
+| `languages` | List of two-character language codes |
+| `media_type` | Media type of the book |
+| `subjects` | List of subjects associated with the book |
+| `summaries` | Book summaries |
+| `title` | Book title |
+| `translators` | List of translators |
 
 Operations: List, Load.
 
@@ -300,18 +300,18 @@ Create an instance: `$book = $client->Book();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `authors` | `array` |  |
-| `bookshelves` | `array` |  |
-| `copyright` | `bool` |  |
-| `download_count` | `int` |  |
-| `formats` | `array` |  |
-| `id` | `int` |  |
-| `languages` | `array` |  |
-| `media_type` | `string` |  |
-| `subjects` | `array` |  |
-| `summaries` | `array` |  |
-| `title` | `string` |  |
-| `translators` | `array` |  |
+| `authors` | `array` | List of authors |
+| `bookshelves` | `array` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `bool` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `int` | Number of downloads from Project Gutenberg |
+| `formats` | `array` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `int` | Project Gutenberg ID number |
+| `languages` | `array` | List of two-character language codes |
+| `media_type` | `string` | Media type of the book |
+| `subjects` | `array` | List of subjects associated with the book |
+| `summaries` | `array` | Book summaries |
+| `title` | `string` | Book title |
+| `translators` | `array` | List of translators |
 
 #### Example: Load
 

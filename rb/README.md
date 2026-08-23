@@ -253,18 +253,18 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `authors` |  |
-| `bookshelves` |  |
-| `copyright` |  |
-| `download_count` |  |
-| `formats` |  |
-| `id` |  |
-| `languages` |  |
-| `media_type` |  |
-| `subjects` |  |
-| `summaries` |  |
-| `title` |  |
-| `translators` |  |
+| `authors` | List of authors |
+| `bookshelves` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | Number of downloads from Project Gutenberg |
+| `formats` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | Project Gutenberg ID number |
+| `languages` | List of two-character language codes |
+| `media_type` | Media type of the book |
+| `subjects` | List of subjects associated with the book |
+| `summaries` | Book summaries |
+| `title` | Book title |
+| `translators` | List of translators |
 
 Operations: List, Load.
 
@@ -290,18 +290,18 @@ Create an instance: `book = client.Book`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `authors` | `Array` |  |
-| `bookshelves` | `Array` |  |
-| `copyright` | `Boolean` |  |
-| `download_count` | `Integer` |  |
-| `formats` | `Hash` |  |
-| `id` | `Integer` |  |
-| `languages` | `Array` |  |
-| `media_type` | `String` |  |
-| `subjects` | `Array` |  |
-| `summaries` | `Array` |  |
-| `title` | `String` |  |
-| `translators` | `Array` |  |
+| `authors` | `Array` | List of authors |
+| `bookshelves` | `Array` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `Boolean` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `Integer` | Number of downloads from Project Gutenberg |
+| `formats` | `Hash` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `Integer` | Project Gutenberg ID number |
+| `languages` | `Array` | List of two-character language codes |
+| `media_type` | `String` | Media type of the book |
+| `subjects` | `Array` | List of subjects associated with the book |
+| `summaries` | `Array` | Book summaries |
+| `title` | `String` | Book title |
+| `translators` | `Array` | List of translators |
 
 #### Example: Load
 

@@ -6,7 +6,7 @@ The Golang SDK for the Gutendex API — an entity-oriented client using standard
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Book(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -269,18 +269,18 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"authors"` |  |
-| `"bookshelves"` |  |
-| `"copyright"` |  |
-| `"download_count"` |  |
-| `"formats"` |  |
-| `"id"` |  |
-| `"languages"` |  |
-| `"media_type"` |  |
-| `"subjects"` |  |
-| `"summaries"` |  |
-| `"title"` |  |
-| `"translators"` |  |
+| `"authors"` | List of authors |
+| `"bookshelves"` | Project Gutenberg bookshelves the book belongs to |
+| `"copyright"` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `"download_count"` | Number of downloads from Project Gutenberg |
+| `"formats"` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `"id"` | Project Gutenberg ID number |
+| `"languages"` | List of two-character language codes |
+| `"media_type"` | Media type of the book |
+| `"subjects"` | List of subjects associated with the book |
+| `"summaries"` | Book summaries |
+| `"title"` | Book title |
+| `"translators"` | List of translators |
 
 Operations: List, Load.
 
@@ -306,18 +306,18 @@ Create an instance: `book := client.Book(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `authors` | `[]any` |  |
-| `bookshelves` | `[]any` |  |
-| `copyright` | `bool` |  |
-| `download_count` | `int` |  |
-| `formats` | `map[string]any` |  |
-| `id` | `int` |  |
-| `languages` | `[]any` |  |
-| `media_type` | `string` |  |
-| `subjects` | `[]any` |  |
-| `summaries` | `[]any` |  |
-| `title` | `string` |  |
-| `translators` | `[]any` |  |
+| `authors` | `[]any` | List of authors |
+| `bookshelves` | `[]any` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `bool` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `int` | Number of downloads from Project Gutenberg |
+| `formats` | `map[string]any` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `int` | Project Gutenberg ID number |
+| `languages` | `[]any` | List of two-character language codes |
+| `media_type` | `string` | Media type of the book |
+| `subjects` | `[]any` | List of subjects associated with the book |
+| `summaries` | `[]any` | Book summaries |
+| `title` | `string` | Book title |
+| `translators` | `[]any` | List of translators |
 
 #### Example: Load
 

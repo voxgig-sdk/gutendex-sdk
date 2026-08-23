@@ -256,18 +256,18 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `authors` |  |
-| `bookshelves` |  |
-| `copyright` |  |
-| `download_count` |  |
-| `formats` |  |
-| `id` |  |
-| `languages` |  |
-| `media_type` |  |
-| `subjects` |  |
-| `summaries` |  |
-| `title` |  |
-| `translators` |  |
+| `authors` | List of authors |
+| `bookshelves` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | Number of downloads from Project Gutenberg |
+| `formats` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | Project Gutenberg ID number |
+| `languages` | List of two-character language codes |
+| `media_type` | Media type of the book |
+| `subjects` | List of subjects associated with the book |
+| `summaries` | Book summaries |
+| `title` | Book title |
+| `translators` | List of translators |
 
 Operations: List, Load.
 
@@ -293,18 +293,18 @@ Create an instance: `book = client.Book()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `authors` | `list` |  |
-| `bookshelves` | `list` |  |
-| `copyright` | `bool` |  |
-| `download_count` | `int` |  |
-| `formats` | `dict` |  |
-| `id` | `int` |  |
-| `languages` | `list` |  |
-| `media_type` | `str` |  |
-| `subjects` | `list` |  |
-| `summaries` | `list` |  |
-| `title` | `str` |  |
-| `translators` | `list` |  |
+| `authors` | `list` | List of authors |
+| `bookshelves` | `list` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `bool` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `int` | Number of downloads from Project Gutenberg |
+| `formats` | `dict` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `int` | Project Gutenberg ID number |
+| `languages` | `list` | List of two-character language codes |
+| `media_type` | `str` | Media type of the book |
+| `subjects` | `list` | List of subjects associated with the book |
+| `summaries` | `list` | Book summaries |
+| `title` | `str` | Book title |
+| `translators` | `list` | List of translators |
 
 #### Example: Load
 

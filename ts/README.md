@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -302,18 +302,18 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `authors` |  |
-| `bookshelves` |  |
-| `copyright` |  |
-| `download_count` |  |
-| `formats` |  |
-| `id` |  |
-| `languages` |  |
-| `media_type` |  |
-| `subjects` |  |
-| `summaries` |  |
-| `title` |  |
-| `translators` |  |
+| `authors` | List of authors |
+| `bookshelves` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | Number of downloads from Project Gutenberg |
+| `formats` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | Project Gutenberg ID number |
+| `languages` | List of two-character language codes |
+| `media_type` | Media type of the book |
+| `subjects` | List of subjects associated with the book |
+| `summaries` | Book summaries |
+| `title` | Book title |
+| `translators` | List of translators |
 
 Operations: list, load.
 
@@ -339,18 +339,18 @@ Create an instance: `const book = client.Book()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `authors` | `any[]` |  |
-| `bookshelves` | `any[]` |  |
-| `copyright` | `boolean` |  |
-| `download_count` | `number` |  |
-| `formats` | `Record<string, any>` |  |
-| `id` | `number` |  |
-| `languages` | `any[]` |  |
-| `media_type` | `string` |  |
-| `subjects` | `any[]` |  |
-| `summaries` | `any[]` |  |
-| `title` | `string` |  |
-| `translators` | `any[]` |  |
+| `authors` | `any[]` | List of authors |
+| `bookshelves` | `any[]` | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `boolean` | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `number` | Number of downloads from Project Gutenberg |
+| `formats` | `Record<string, any>` | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `number` | Project Gutenberg ID number |
+| `languages` | `any[]` | List of two-character language codes |
+| `media_type` | `string` | Media type of the book |
+| `subjects` | `any[]` | List of subjects associated with the book |
+| `summaries` | `any[]` | Book summaries |
+| `title` | `string` | Book title |
+| `translators` | `any[]` | List of translators |
 
 #### Example: Load
 

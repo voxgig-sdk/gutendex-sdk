@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Gutendex",
+            "slug": "gutendex",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,61 +54,73 @@ def make_config():
           {
             "name": "authors",
             "req": True,
+            "short": "List of authors",
             "type": "`$ARRAY`",
           },
           {
             "name": "bookshelves",
             "req": True,
+            "short": "Project Gutenberg bookshelves the book belongs to",
             "type": "`$ARRAY`",
           },
           {
             "name": "copyright",
             "req": True,
+            "short": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "download_count",
             "req": True,
+            "short": "Number of downloads from Project Gutenberg",
             "type": "`$INTEGER`",
           },
           {
             "name": "formats",
             "req": True,
+            "short": "Available formats for the book, where keys are MIME types and values are download URLs",
             "type": "`$OBJECT`",
           },
           {
             "name": "id",
             "req": True,
+            "short": "Project Gutenberg ID number",
             "type": "`$INTEGER`",
           },
           {
             "name": "languages",
             "req": True,
+            "short": "List of two-character language codes",
             "type": "`$ARRAY`",
           },
           {
             "name": "media_type",
             "req": True,
+            "short": "Media type of the book",
             "type": "`$STRING`",
           },
           {
             "name": "subjects",
             "req": True,
+            "short": "List of subjects associated with the book",
             "type": "`$ARRAY`",
           },
           {
             "name": "summaries",
             "req": True,
+            "short": "Book summaries",
             "type": "`$ARRAY`",
           },
           {
             "name": "title",
             "req": True,
+            "short": "Book title",
             "type": "`$STRING`",
           },
           {
             "name": "translators",
             "req": True,
+            "short": "List of translators",
             "type": "`$ARRAY`",
           },
         ],

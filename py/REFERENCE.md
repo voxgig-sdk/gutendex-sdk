@@ -87,18 +87,18 @@ book = client.Book()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `authors` | `list` | Yes |  |
-| `bookshelves` | `list` | Yes |  |
-| `copyright` | `bool` | Yes |  |
-| `download_count` | `int` | Yes |  |
-| `formats` | `dict` | Yes |  |
-| `id` | `int` | Yes |  |
-| `languages` | `list` | Yes |  |
-| `media_type` | `str` | Yes |  |
-| `subjects` | `list` | Yes |  |
-| `summaries` | `list` | Yes |  |
-| `title` | `str` | Yes |  |
-| `translators` | `list` | Yes |  |
+| `authors` | `list` | Yes | List of authors |
+| `bookshelves` | `list` | Yes | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `bool` | Yes | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `int` | Yes | Number of downloads from Project Gutenberg |
+| `formats` | `dict` | Yes | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `int` | Yes | Project Gutenberg ID number |
+| `languages` | `list` | Yes | List of two-character language codes |
+| `media_type` | `str` | Yes | Media type of the book |
+| `subjects` | `list` | Yes | List of subjects associated with the book |
+| `summaries` | `list` | Yes | Book summaries |
+| `title` | `str` | Yes | Book title |
+| `translators` | `list` | Yes | List of translators |
 
 ### Operations
 

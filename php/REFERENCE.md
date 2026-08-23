@@ -92,18 +92,18 @@ $book = $client->Book();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `authors` | `array` | Yes |  |
-| `bookshelves` | `array` | Yes |  |
-| `copyright` | `bool` | Yes |  |
-| `download_count` | `int` | Yes |  |
-| `formats` | `array` | Yes |  |
-| `id` | `int` | Yes |  |
-| `languages` | `array` | Yes |  |
-| `media_type` | `string` | Yes |  |
-| `subjects` | `array` | Yes |  |
-| `summaries` | `array` | Yes |  |
-| `title` | `string` | Yes |  |
-| `translators` | `array` | Yes |  |
+| `authors` | `array` | Yes | List of authors |
+| `bookshelves` | `array` | Yes | Project Gutenberg bookshelves the book belongs to |
+| `copyright` | `bool` | Yes | Copyright status: true (copyrighted), false (public domain in USA), or null (no information) |
+| `download_count` | `int` | Yes | Number of downloads from Project Gutenberg |
+| `formats` | `array` | Yes | Available formats for the book, where keys are MIME types and values are download URLs |
+| `id` | `int` | Yes | Project Gutenberg ID number |
+| `languages` | `array` | Yes | List of two-character language codes |
+| `media_type` | `string` | Yes | Media type of the book |
+| `subjects` | `array` | Yes | List of subjects associated with the book |
+| `summaries` | `array` | Yes | Book summaries |
+| `title` | `string` | Yes | Book title |
+| `translators` | `array` | Yes | List of translators |
 
 ### Operations
 
