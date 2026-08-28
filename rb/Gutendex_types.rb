@@ -72,54 +72,42 @@ BookLoadMatch = Struct.new(
 
 # Request payload for Book#list.
 #
-# @!attribute [rw] authors
-#   @return [Array, nil]
+# @!attribute [rw] author_year_end
+#   @return [Integer, nil]
 #
-# @!attribute [rw] bookshelves
-#   @return [Array, nil]
+# @!attribute [rw] author_year_start
+#   @return [Integer, nil]
 #
 # @!attribute [rw] copyright
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] download_count
-#   @return [Integer, nil]
-#
-# @!attribute [rw] formats
-#   @return [Hash, nil]
-#
-# @!attribute [rw] id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] languages
-#   @return [Array, nil]
-#
-# @!attribute [rw] media_type
 #   @return [String, nil]
 #
-# @!attribute [rw] subjects
-#   @return [Array, nil]
-#
-# @!attribute [rw] summaries
-#   @return [Array, nil]
-#
-# @!attribute [rw] title
+# @!attribute [rw] ids
 #   @return [String, nil]
 #
-# @!attribute [rw] translators
-#   @return [Array, nil]
+# @!attribute [rw] language
+#   @return [String, nil]
+#
+# @!attribute [rw] mime_type
+#   @return [String, nil]
+#
+# @!attribute [rw] search
+#   @return [String, nil]
+#
+# @!attribute [rw] sort
+#   @return [String, nil]
+#
+# @!attribute [rw] topic
+#   @return [String, nil]
 BookListMatch = Struct.new(
-  :authors,
-  :bookshelves,
+  :author_year_end,
+  :author_year_start,
   :copyright,
-  :download_count,
-  :formats,
-  :id,
-  :languages,
-  :media_type,
-  :subjects,
-  :summaries,
-  :title,
-  :translators,
+  :ids,
+  :language,
+  :mime_type,
+  :search,
+  :sort,
+  :topic,
   keyword_init: true
 )
 

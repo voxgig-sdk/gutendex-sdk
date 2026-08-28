@@ -35,18 +35,15 @@ type BookLoadMatch struct {
 
 // BookListMatch is the typed request payload for Book.ListTyped.
 type BookListMatch struct {
-	Authors *[]any `json:"authors,omitempty"`
-	Bookshelves *[]any `json:"bookshelves,omitempty"`
-	Copyright *bool `json:"copyright,omitempty"`
-	DownloadCount *int `json:"download_count,omitempty"`
-	Formats *map[string]any `json:"formats,omitempty"`
-	Id *int `json:"id,omitempty"`
-	Languages *[]any `json:"languages,omitempty"`
-	MediaType *string `json:"media_type,omitempty"`
-	Subjects *[]any `json:"subjects,omitempty"`
-	Summaries *[]any `json:"summaries,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Translators *[]any `json:"translators,omitempty"`
+	AuthorYearEnd *int `json:"author_year_end,omitempty"`
+	AuthorYearStart *int `json:"author_year_start,omitempty"`
+	Copyright *string `json:"copyright,omitempty"`
+	Ids *string `json:"ids,omitempty"`
+	Language *string `json:"language,omitempty"`
+	MimeType *string `json:"mime_type,omitempty"`
+	Search *string `json:"search,omitempty"`
+	Sort *string `json:"sort,omitempty"`
+	Topic *string `json:"topic,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

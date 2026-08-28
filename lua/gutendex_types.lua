@@ -24,18 +24,15 @@
 ---@field id number
 
 ---@class BookListMatch
----@field authors? table
----@field bookshelves? table
----@field copyright? boolean
----@field download_count? number
----@field formats? table
----@field id? number
----@field languages? table
----@field media_type? string
----@field subjects? table
----@field summaries? table
----@field title? string
----@field translators? table
+---@field author_year_end? number
+---@field author_year_start? number
+---@field copyright? string
+---@field ids? string
+---@field language? string
+---@field mime_type? string
+---@field search? string
+---@field sort? string
+---@field topic? string
 
 local M = {}
 

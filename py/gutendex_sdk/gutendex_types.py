@@ -36,15 +36,12 @@ class BookLoadMatch(TypedDict):
 
 
 class BookListMatch(TypedDict, total=False):
-    authors: list
-    bookshelves: list
-    copyright: bool
-    download_count: int
-    formats: dict
-    id: int
-    languages: list
-    media_type: str
-    subjects: list
-    summaries: list
-    title: str
-    translators: list
+    author_year_end: int
+    author_year_start: int
+    copyright: str
+    ids: str
+    language: str
+    mime_type: str
+    search: str
+    sort: str
+    topic: str

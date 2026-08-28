@@ -38,17 +38,14 @@ class BookLoadMatch
 /** Request payload for Book#list. */
 class BookListMatch
 {
-    public ?array $authors = null;
-    public ?array $bookshelves = null;
-    public ?bool $copyright = null;
-    public ?int $download_count = null;
-    public ?array $formats = null;
-    public ?int $id = null;
-    public ?array $languages = null;
-    public ?string $media_type = null;
-    public ?array $subjects = null;
-    public ?array $summaries = null;
-    public ?string $title = null;
-    public ?array $translators = null;
+    public ?int $author_year_end = null;
+    public ?int $author_year_start = null;
+    public ?string $copyright = null;
+    public ?string $ids = null;
+    public ?string $language = null;
+    public ?string $mime_type = null;
+    public ?string $search = null;
+    public ?string $sort = null;
+    public ?string $topic = null;
 }
 
