@@ -130,6 +130,10 @@ class GutendexConfig
               'type' => '`$ARRAY`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'book',
           'op' => [
             'list' => [
@@ -207,8 +211,10 @@ class GutendexConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/books',
-                  'parts' => [
-                    'books',
+                  'segments' => [
+                    [
+                      'lit' => 'books',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -226,6 +232,9 @@ class GutendexConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.results`',
+                  ],
+                  'parts' => [
+                    'books',
                   ],
                 ],
               ],
@@ -250,9 +259,13 @@ class GutendexConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/books/{id}',
-                  'parts' => [
-                    'books',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'books',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -262,6 +275,10 @@ class GutendexConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'books',
+                    '{id}',
                   ],
                 ],
               ],

@@ -116,6 +116,10 @@ module GutendexConfig
               "type" => "`$ARRAY`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "book",
           "op" => {
             "list" => {
@@ -193,8 +197,10 @@ module GutendexConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/books",
-                  "parts" => [
-                    "books",
+                  "segments" => [
+                    {
+                      "lit" => "books",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -213,6 +219,9 @@ module GutendexConfig
                     "req" => "`reqdata`",
                     "res" => "`body.results`",
                   },
+                  "parts" => [
+                    "books",
+                  ],
                 },
               ],
             },
@@ -236,9 +245,13 @@ module GutendexConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/books/{id}",
-                  "parts" => [
-                    "books",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "books",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -249,6 +262,10 @@ module GutendexConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "books",
+                    "{id}",
+                  ],
                 },
               ],
             },

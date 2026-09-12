@@ -104,6 +104,10 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "book",
         ["op"] = {
           ["list"] = {
@@ -181,8 +185,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/books",
-                ["parts"] = {
-                  "books",
+                ["segments"] = {
+                  {
+                    ["lit"] = "books",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -200,6 +206,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.results`",
+                },
+                ["parts"] = {
+                  "books",
                 },
               },
             },
@@ -224,9 +233,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/books/{id}",
-                ["parts"] = {
-                  "books",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "books",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -236,6 +249,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "books",
+                  "{id}",
                 },
               },
             },

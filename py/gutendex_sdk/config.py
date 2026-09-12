@@ -1,6 +1,14 @@
 # Gutendex SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -125,6 +133,10 @@ def make_config():
             "type": "`$ARRAY`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "book",
         "op": {
           "list": {
@@ -202,8 +214,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/books",
-                "parts": [
-                  "books",
+                "segments": [
+                  {
+                    "lit": "books",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -222,6 +236,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.results`",
                 },
+                "parts": [
+                  "books",
+                ],
               },
             ],
           },
@@ -245,9 +262,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/books/{id}",
-                "parts": [
-                  "books",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "books",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -258,6 +279,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "books",
+                  "{id}",
+                ],
               },
             ],
           },

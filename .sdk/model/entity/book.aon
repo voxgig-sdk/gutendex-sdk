@@ -168,8 +168,10 @@ main: kit: entity: book: {
           }
           method: "GET"
           orig: "/books"
-          parts: [
-            "books"
+          segments: [
+            {
+              lit: "books"
+            }
           ]
           select: {
             exist: [
@@ -209,9 +211,13 @@ main: kit: entity: book: {
           }
           method: "GET"
           orig: "/books/{id}"
-          parts: [
-            "books"
-            "{id}"
+          segments: [
+            {
+              lit: "books"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
