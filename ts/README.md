@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { GutendexSDK } from '@voxgig-sdk/gutendex'
+import { GutendexSDK } from '@voxgig-sdk/gutendex-sdk'
 
 const client = new GutendexSDK()
 ```
@@ -447,7 +447,7 @@ gutendex/
 Import the SDK from the package root:
 
 ```ts
-import { GutendexSDK } from '@voxgig-sdk/gutendex'
+import { GutendexSDK } from '@voxgig-sdk/gutendex-sdk'
 ```
 
 ### Entity state

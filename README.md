@@ -105,7 +105,7 @@ local results, err = client:Book():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
+| TypeScript | `@voxgig-sdk/gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
 | Python | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
 | PHP | `voxgig-sdk/gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/gutendex-sdk/go` | `go get github.com/voxgig-sdk/gutendex-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Book():list()
 ### TypeScript
 
 ```ts
-import { GutendexSDK } from '@voxgig-sdk/gutendex'
+import { GutendexSDK } from '@voxgig-sdk/gutendex-sdk'
 
 const client = new GutendexSDK()
 
