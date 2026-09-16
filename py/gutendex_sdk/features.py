@@ -1,12 +1,18 @@
 # Gutendex SDK feature factory
 
 from gutendex_sdk.feature.base_feature import GutendexBaseFeature
+from gutendex_sdk.feature.ratelimit_feature import GutendexRatelimitFeature
+from gutendex_sdk.feature.retry_feature import GutendexRetryFeature
 from gutendex_sdk.feature.test_feature import GutendexTestFeature
+from gutendex_sdk.feature.timeout_feature import GutendexTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: GutendexBaseFeature(),
+    "ratelimit": lambda: GutendexRatelimitFeature(),
+    "retry": lambda: GutendexRetryFeature(),
     "test": lambda: GutendexTestFeature(),
+    "timeout": lambda: GutendexTimeoutFeature(),
 }
 
 
