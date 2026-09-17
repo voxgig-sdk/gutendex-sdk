@@ -105,12 +105,12 @@ local results, err = client:Book():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
-| Python | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
-| PHP | `voxgig-sdk/gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
+| TypeScript | `@voxgig-sdk/gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| Python | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| PHP | `voxgig-sdk/gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/gutendex-sdk/go` | `go get github.com/voxgig-sdk/gutendex-sdk/go@latest` |
-| Ruby | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
-| Lua | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/releases) |
+| Ruby | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| Lua | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/gutendex-sdk/go-cli` | `go install github.com/voxgig-sdk/gutendex-sdk/go-cli/cmd/gutendex@latest` |
 | Go MCP server | `github.com/voxgig-sdk/gutendex-sdk/go-mcp` | `go get github.com/voxgig-sdk/gutendex-sdk/go-mcp@latest` |
 
