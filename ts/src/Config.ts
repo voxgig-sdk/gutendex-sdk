@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -139,75 +132,87 @@ class Config {
       "fields": [
         {
           "name": "authors",
+          "title": "Authors",
+          "type": "`$ARRAY`",
           "req": true,
-          "short": "List of authors",
-          "type": "`$ARRAY`"
+          "short": "List of authors"
         },
         {
           "name": "bookshelves",
+          "title": "Bookshelves",
+          "type": "`$ARRAY`",
           "req": true,
-          "short": "Project Gutenberg bookshelves the book belongs to",
-          "type": "`$ARRAY`"
+          "short": "Project Gutenberg bookshelves the book belongs to"
         },
         {
           "name": "copyright",
+          "title": "Copyright",
+          "type": "`$BOOLEAN`",
           "req": true,
-          "short": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
-          "type": "`$BOOLEAN`"
+          "short": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)"
         },
         {
           "name": "download_count",
+          "title": "Download Count",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Number of downloads from Project Gutenberg",
-          "type": "`$INTEGER`"
+          "short": "Number of downloads from Project Gutenberg"
         },
         {
           "name": "formats",
+          "title": "Formats",
+          "type": "`$OBJECT`",
           "req": true,
-          "short": "Available formats for the book, where keys are MIME types and values are download URLs",
-          "type": "`$OBJECT`"
+          "short": "Available formats for the book, where keys are MIME types and values are download URLs"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Project Gutenberg ID number",
-          "type": "`$INTEGER`"
+          "short": "Project Gutenberg ID number"
         },
         {
           "name": "languages",
+          "title": "Languages",
+          "type": "`$ARRAY`",
           "req": true,
-          "short": "List of two-character language codes",
-          "type": "`$ARRAY`"
+          "short": "List of two-character language codes"
         },
         {
           "name": "media_type",
+          "title": "Media Type",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Media type of the book",
-          "type": "`$STRING`"
+          "short": "Media type of the book"
         },
         {
           "name": "subjects",
+          "title": "Subjects",
+          "type": "`$ARRAY`",
           "req": true,
-          "short": "List of subjects associated with the book",
-          "type": "`$ARRAY`"
+          "short": "List of subjects associated with the book"
         },
         {
           "name": "summaries",
+          "title": "Summaries",
+          "type": "`$ARRAY`",
           "req": true,
-          "short": "Book summaries",
-          "type": "`$ARRAY`"
+          "short": "Book summaries"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Book title",
-          "type": "`$STRING`"
+          "short": "Book title"
         },
         {
           "name": "translators",
+          "title": "Translators",
+          "type": "`$ARRAY`",
           "req": true,
-          "short": "List of translators",
-          "type": "`$ARRAY`"
+          "short": "List of translators"
         }
       ],
       "id": {
@@ -221,73 +226,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 1899,
-                    "kind": "query",
-                    "name": "author_year_end",
-                    "orig": "author_year_end",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 1800,
-                    "kind": "query",
-                    "name": "author_year_start",
-                    "orig": "author_year_start",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": "true,false",
-                    "kind": "query",
-                    "name": "copyright",
-                    "orig": "copyright",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "11,12,13",
-                    "kind": "query",
-                    "name": "ids",
-                    "orig": "ids",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "en,fr",
-                    "kind": "query",
-                    "name": "language",
-                    "orig": "language",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "text/html",
-                    "kind": "query",
-                    "name": "mime_type",
-                    "orig": "mime_type",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "dickens great",
-                    "kind": "query",
-                    "name": "search",
-                    "orig": "search",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "popular",
-                    "kind": "query",
-                    "name": "sort",
-                    "orig": "sort",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "children",
-                    "kind": "query",
-                    "name": "topic",
-                    "orig": "topic",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/books",
@@ -296,6 +234,81 @@ class Config {
                   "lit": "books"
                 }
               ],
+              "parts": [
+                "books"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.results`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "author_year_end",
+                    "orig": "author_year_end",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1899
+                  },
+                  {
+                    "name": "author_year_start",
+                    "orig": "author_year_start",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1800
+                  },
+                  {
+                    "name": "copyright",
+                    "orig": "copyright",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "true,false"
+                  },
+                  {
+                    "name": "ids",
+                    "orig": "ids",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "11,12,13"
+                  },
+                  {
+                    "name": "language",
+                    "orig": "language",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "en,fr"
+                  },
+                  {
+                    "name": "mime_type",
+                    "orig": "mime_type",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "text/html"
+                  },
+                  {
+                    "name": "search",
+                    "orig": "search",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "dickens great"
+                  },
+                  {
+                    "name": "sort",
+                    "orig": "sort",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "popular"
+                  },
+                  {
+                    "name": "topic",
+                    "orig": "topic",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "children"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "author_year_end",
@@ -308,14 +321,7 @@ class Config {
                   "sort",
                   "topic"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.results`"
-              },
-              "parts": [
-                "books"
-              ]
+              }
             }
           ]
         },
@@ -324,18 +330,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "example": 84,
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "id",
-                    "reqd": true,
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/books/{id}",
@@ -347,19 +341,32 @@ class Config {
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
+              "parts": [
+                "books",
+                "{id}"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "books",
-                "{id}"
-              ]
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "id",
+                    "type": "`$INTEGER`",
+                    "kind": "param",
+                    "reqd": true,
+                    "example": 84
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }

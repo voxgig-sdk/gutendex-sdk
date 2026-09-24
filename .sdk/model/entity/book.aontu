@@ -1,0 +1,260 @@
+# Entity: book
+
+main: kit: entity: book: {
+
+  alias: field: {}
+
+  fields: {
+    authors: {
+      h: "Authors"
+      n: "authors"
+      r: true
+      sh: "List of authors"
+      t: "`$ARRAY`"
+    }
+    bookshelves: {
+      h: "Bookshelves"
+      n: "bookshelves"
+      r: true
+      sh: "Project Gutenberg bookshelves the book belongs to"
+      t: "`$ARRAY`"
+    }
+    copyright: {
+      h: "Copyright"
+      n: "copyright"
+      r: true
+      sh: "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)"
+      t: "`$BOOLEAN`"
+    }
+    download_count: {
+      h: "Download Count"
+      n: "download_count"
+      r: true
+      sh: "Number of downloads from Project Gutenberg"
+      t: "`$INTEGER`"
+    }
+    formats: {
+      h: "Formats"
+      n: "formats"
+      r: true
+      sh: "Available formats for the book, where keys are MIME types and values are download URLs"
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Project Gutenberg ID number"
+      t: "`$INTEGER`"
+    }
+    languages: {
+      h: "Languages"
+      n: "languages"
+      r: true
+      sh: "List of two-character language codes"
+      t: "`$ARRAY`"
+    }
+    media_type: {
+      h: "Media Type"
+      n: "media_type"
+      r: true
+      sh: "Media type of the book"
+      t: "`$STRING`"
+    }
+    subjects: {
+      h: "Subjects"
+      n: "subjects"
+      r: true
+      sh: "List of subjects associated with the book"
+      t: "`$ARRAY`"
+    }
+    summaries: {
+      h: "Summaries"
+      n: "summaries"
+      r: true
+      sh: "Book summaries"
+      t: "`$ARRAY`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Book title"
+      t: "`$STRING`"
+    }
+    translators: {
+      h: "Translators"
+      n: "translators"
+      r: true
+      sh: "List of translators"
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "book"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /books"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 1899
+                k: "query"
+                n: "author_year_end"
+                or: "author_year_end"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 1800
+                k: "query"
+                n: "author_year_start"
+                or: "author_year_start"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "true,false"
+                k: "query"
+                n: "copyright"
+                or: "copyright"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "11,12,13"
+                k: "query"
+                n: "ids"
+                or: "ids"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "en,fr"
+                k: "query"
+                n: "language"
+                or: "language"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "text/html"
+                k: "query"
+                n: "mime_type"
+                or: "mime_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "dickens great"
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "popular"
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "children"
+                k: "query"
+                n: "topic"
+                or: "topic"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/books"
+          q: {
+            exist: [
+              "author_year_end"
+              "author_year_start"
+              "copyright"
+              "ids"
+              "language"
+              "mime_type"
+              "search"
+              "sort"
+              "topic"
+            ]
+          }
+          s: [
+            {
+              lit: "books"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.results`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /books/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: 84
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/books/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "books"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

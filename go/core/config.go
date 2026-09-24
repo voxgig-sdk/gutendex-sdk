@@ -91,75 +91,87 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "authors",
+						"title": "Authors",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "List of authors",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "bookshelves",
+						"title": "Bookshelves",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "Project Gutenberg bookshelves the book belongs to",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "copyright",
+						"title": "Copyright",
+						"type": "`$BOOLEAN`",
 						"req": true,
 						"short": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
-						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "download_count",
+						"title": "Download Count",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Number of downloads from Project Gutenberg",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "formats",
+						"title": "Formats",
+						"type": "`$OBJECT`",
 						"req": true,
 						"short": "Available formats for the book, where keys are MIME types and values are download URLs",
-						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Project Gutenberg ID number",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "languages",
+						"title": "Languages",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "List of two-character language codes",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "media_type",
+						"title": "Media Type",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Media type of the book",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "subjects",
+						"title": "Subjects",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "List of subjects associated with the book",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "summaries",
+						"title": "Summaries",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "Book summaries",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
+						"title": "Title",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Book title",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "translators",
+						"title": "Translators",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "List of translators",
-						"type": "`$ARRAY`",
 					},
 				},
 				"id": map[string]any{
@@ -173,79 +185,87 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 1899,
-											"kind": "query",
-											"name": "author_year_end",
-											"orig": "author_year_end",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 1800,
-											"kind": "query",
-											"name": "author_year_start",
-											"orig": "author_year_start",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": "true,false",
-											"kind": "query",
-											"name": "copyright",
-											"orig": "copyright",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "11,12,13",
-											"kind": "query",
-											"name": "ids",
-											"orig": "ids",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "en,fr",
-											"kind": "query",
-											"name": "language",
-											"orig": "language",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "text/html",
-											"kind": "query",
-											"name": "mime_type",
-											"orig": "mime_type",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "dickens great",
-											"kind": "query",
-											"name": "search",
-											"orig": "search",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "popular",
-											"kind": "query",
-											"name": "sort",
-											"orig": "sort",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "children",
-											"kind": "query",
-											"name": "topic",
-											"orig": "topic",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/books",
 								"segments": []any{
 									map[string]any{
 										"lit": "books",
+									},
+								},
+								"parts": []any{
+									"books",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.results`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "author_year_end",
+											"orig": "author_year_end",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 1899,
+										},
+										map[string]any{
+											"name": "author_year_start",
+											"orig": "author_year_start",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 1800,
+										},
+										map[string]any{
+											"name": "copyright",
+											"orig": "copyright",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "true,false",
+										},
+										map[string]any{
+											"name": "ids",
+											"orig": "ids",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "11,12,13",
+										},
+										map[string]any{
+											"name": "language",
+											"orig": "language",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "en,fr",
+										},
+										map[string]any{
+											"name": "mime_type",
+											"orig": "mime_type",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "text/html",
+										},
+										map[string]any{
+											"name": "search",
+											"orig": "search",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "dickens great",
+										},
+										map[string]any{
+											"name": "sort",
+											"orig": "sort",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "popular",
+										},
+										map[string]any{
+											"name": "topic",
+											"orig": "topic",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "children",
+										},
 									},
 								},
 								"select": map[string]any{
@@ -261,13 +281,6 @@ func MakeConfig() map[string]any {
 										"topic",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.results`",
-								},
-								"parts": []any{
-									"books",
-								},
 							},
 						},
 					},
@@ -276,18 +289,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": 84,
-											"kind": "param",
-											"name": "id",
-											"orig": "id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/books/{id}",
@@ -299,18 +300,31 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
-									},
+								"parts": []any{
+									"books",
+									"{id}",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"books",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": 84,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},

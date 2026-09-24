@@ -24,98 +24,176 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "book": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "authors",
-              "req": true,
-              "short": "List of authors",
-              "type": "`$ARRAY`"
+          "fields": {
+            "authors": {
+              "a": true,
+              "h": "Authors",
+              "n": "authors",
+              "r": true,
+              "sh": "List of authors",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "bookshelves",
-              "req": true,
-              "short": "Project Gutenberg bookshelves the book belongs to",
-              "type": "`$ARRAY`"
+            "bookshelves": {
+              "a": true,
+              "h": "Bookshelves",
+              "n": "bookshelves",
+              "r": true,
+              "sh": "Project Gutenberg bookshelves the book belongs to",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "copyright",
-              "req": true,
-              "short": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
-              "type": "`$BOOLEAN`"
+            "copyright": {
+              "a": true,
+              "h": "Copyright",
+              "n": "copyright",
+              "r": true,
+              "sh": "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
+              "t": "`$BOOLEAN`"
             },
-            {
-              "active": true,
-              "name": "download_count",
-              "req": true,
-              "short": "Number of downloads from Project Gutenberg",
-              "type": "`$INTEGER`"
+            "download_count": {
+              "a": true,
+              "h": "Download Count",
+              "n": "download_count",
+              "r": true,
+              "sh": "Number of downloads from Project Gutenberg",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "formats",
-              "req": true,
-              "short": "Available formats for the book, where keys are MIME types and values are download URLs",
-              "type": "`$OBJECT`"
+            "formats": {
+              "a": true,
+              "h": "Formats",
+              "n": "formats",
+              "r": true,
+              "sh": "Available formats for the book, where keys are MIME types and values are download URLs",
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": true,
-              "short": "Project Gutenberg ID number",
-              "type": "`$INTEGER`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Project Gutenberg ID number",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "languages",
-              "req": true,
-              "short": "List of two-character language codes",
-              "type": "`$ARRAY`"
+            "languages": {
+              "a": true,
+              "h": "Languages",
+              "n": "languages",
+              "r": true,
+              "sh": "List of two-character language codes",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "media_type",
-              "req": true,
-              "short": "Media type of the book",
-              "type": "`$STRING`"
+            "media_type": {
+              "a": true,
+              "h": "Media Type",
+              "n": "media_type",
+              "r": true,
+              "sh": "Media type of the book",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "subjects",
-              "req": true,
-              "short": "List of subjects associated with the book",
-              "type": "`$ARRAY`"
+            "subjects": {
+              "a": true,
+              "h": "Subjects",
+              "n": "subjects",
+              "r": true,
+              "sh": "List of subjects associated with the book",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "summaries",
-              "req": true,
-              "short": "Book summaries",
-              "type": "`$ARRAY`"
+            "summaries": {
+              "a": true,
+              "h": "Summaries",
+              "n": "summaries",
+              "r": true,
+              "sh": "Book summaries",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": true,
-              "short": "Book title",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "sh": "Book title",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "translators",
-              "req": true,
-              "short": "List of translators",
-              "type": "`$ARRAY`"
+            "translators": {
+              "a": true,
+              "h": "Translators",
+              "n": "translators",
+              "r": true,
+              "sh": "List of translators",
+              "t": "`$ARRAY`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -127,107 +205,101 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /books",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 1899,
-                        "kind": "query",
-                        "name": "author_year_end",
-                        "orig": "author_year_end",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 1899,
+                        "k": "query",
+                        "n": "author_year_end",
+                        "or": "author_year_end",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 1800,
-                        "kind": "query",
-                        "name": "author_year_start",
-                        "orig": "author_year_start",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 1800,
+                        "k": "query",
+                        "n": "author_year_start",
+                        "or": "author_year_start",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": "true,false",
-                        "kind": "query",
-                        "name": "copyright",
-                        "orig": "copyright",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "true,false",
+                        "k": "query",
+                        "n": "copyright",
+                        "or": "copyright",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "11,12,13",
-                        "kind": "query",
-                        "name": "ids",
-                        "orig": "ids",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "11,12,13",
+                        "k": "query",
+                        "n": "ids",
+                        "or": "ids",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "en,fr",
-                        "kind": "query",
-                        "name": "language",
-                        "orig": "language",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "en,fr",
+                        "k": "query",
+                        "n": "language",
+                        "or": "language",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "text/html",
-                        "kind": "query",
-                        "name": "mime_type",
-                        "orig": "mime_type",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "text/html",
+                        "k": "query",
+                        "n": "mime_type",
+                        "or": "mime_type",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "dickens great",
-                        "kind": "query",
-                        "name": "search",
-                        "orig": "search",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "dickens great",
+                        "k": "query",
+                        "n": "search",
+                        "or": "search",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "popular",
-                        "kind": "query",
-                        "name": "sort",
-                        "orig": "sort",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "popular",
+                        "k": "query",
+                        "n": "sort",
+                        "or": "sort",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "children",
-                        "kind": "query",
-                        "name": "topic",
-                        "orig": "topic",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "children",
+                        "k": "query",
+                        "n": "topic",
+                        "or": "topic",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /books",
-                    "json": "{\"operationId\":\"getBooks\",\"parameters\":[{\"description\":\"Find books with at least one author alive in or after this year. Must be a positive or negative integer.\",\"example\":1800,\"in\":\"query\",\"name\":\"author_year_start\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Find books with at least one author alive in or before this year. Must be a positive or negative integer.\",\"example\":1899,\"in\":\"query\",\"name\":\"author_year_end\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Filter by copyright status: true (existing copyrights), false (public domain in USA), or null (no information). Can be comma-separated.\",\"example\":\"true,false\",\"in\":\"query\",\"name\":\"copyright\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Comma-separated list of Project Gutenberg ID numbers.\",\"example\":\"11,12,13\",\"in\":\"query\",\"name\":\"ids\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Comma-separated list of two-character language codes.\",\"example\":\"en,fr\",\"in\":\"query\",\"name\":\"languages\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter books by MIME type. Matches books with MIME types starting with the given value.\",\"example\":\"text/html\",\"in\":\"query\",\"name\":\"mime_type\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Search author names and book titles. Words must be space-separated (URL-encoded as %20). Case-insensitive.\",\"example\":\"dickens great\",\"in\":\"query\",\"name\":\"search\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Sort order for books: 'ascending' (ID low to high), 'descending' (ID high to low), or 'popular' (most to least downloads, default).\",\"in\":\"query\",\"name\":\"sort\",\"required\":false,\"schema\":{\"default\":\"popular\",\"enum\":[\"ascending\",\"descending\",\"popular\"],\"type\":\"string\"}},{\"description\":\"Case-insensitive search for key-phrase in books' bookshelves or subjects.\",\"example\":\"children\",\"in\":\"query\",\"name\":\"topic\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"count\":{\"description\":\"Total number of books for the query across all pages\",\"type\":\"integer\"},\"next\":{\"description\":\"URL to the next page of results, or null if on the last page\",\"nullable\":true,\"type\":\"string\"},\"previous\":{\"description\":\"URL to the previous page of results, or null if on the first page\",\"nullable\":true,\"type\":\"string\"},\"results\":{\"description\":\"Array of 0-32 book objects\",\"items\":{\"properties\":{\"authors\":{\"description\":\"List of authors\",\"items\":{\"properties\":{\"birth_year\":{\"description\":\"Year of birth, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"death_year\":{\"description\":\"Year of death, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"name\":{\"description\":\"Full name of the person\",\"type\":\"string\"}},\"required\":[\"birth_year\",\"death_year\",\"name\"],\"type\":\"object\"},\"type\":\"array\"},\"bookshelves\":{\"description\":\"Project Gutenberg bookshelves the book belongs to\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"copyright\":{\"description\":\"Copyright status: true (copyrighted), false (public domain in USA), or null (no information)\",\"nullable\":true,\"type\":\"boolean\"},\"download_count\":{\"description\":\"Number of downloads from Project Gutenberg\",\"type\":\"integer\"},\"formats\":{\"additionalProperties\":{\"format\":\"uri\",\"type\":\"string\"},\"description\":\"Available formats for the book, where keys are MIME types and values are download URLs\",\"example\":{\"application/epub+zip\":\"https://www.gutenberg.org/ebooks/84.epub.images\",\"text/html\":\"https://www.gutenberg.org/ebooks/84.html.images\",\"text/plain\":\"https://www.gutenberg.org/files/84/84-0.txt\"},\"type\":\"object\"},\"id\":{\"description\":\"Project Gutenberg ID number\",\"type\":\"integer\"},\"languages\":{\"description\":\"List of two-character language codes\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"media_type\":{\"description\":\"Media type of the book\",\"type\":\"string\"},\"subjects\":{\"description\":\"List of subjects associated with the book\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"summaries\":{\"description\":\"Book summaries\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"title\":{\"description\":\"Book title\",\"type\":\"string\"},\"translators\":{\"description\":\"List of translators\",\"items\":{\"properties\":{\"birth_year\":{\"description\":\"Year of birth, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"death_year\":{\"description\":\"Year of death, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"name\":{\"description\":\"Full name of the person\",\"type\":\"string\"}},\"required\":[\"birth_year\",\"death_year\",\"name\"],\"type\":\"object\"},\"type\":\"array\"}},\"required\":[\"id\",\"title\",\"subjects\",\"authors\",\"summaries\",\"translators\",\"bookshelves\",\"languages\",\"copyright\",\"media_type\",\"formats\",\"download_count\"],\"type\":\"object\"},\"maxItems\":32,\"minItems\":0,\"type\":\"array\"}},\"required\":[\"count\",\"next\",\"previous\",\"results\"],\"type\":\"object\"}}},\"description\":\"Successful response with paginated list of books\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"detail\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"}},\"required\":[\"detail\"],\"type\":\"object\"}}},\"description\":\"Bad request\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/books",
-                  "segments": [
-                    {
-                      "lit": "books"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/books",
+                  "q": {
                     "exist": [
                       "author_year_end",
                       "author_year_start",
@@ -240,7 +312,13 @@
                       "topic"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "books"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.results`"
                   }
@@ -252,30 +330,35 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /books/{id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "example": 84,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "id",
-                        "reqd": true,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 84,
+                        "k": "param",
+                        "n": "id",
+                        "or": "id",
+                        "r": true,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /books/{id}",
-                    "json": "{\"operationId\":\"getBookById\",\"parameters\":[{\"description\":\"Project Gutenberg ID number of the book\",\"example\":84,\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"authors\":{\"description\":\"List of authors\",\"items\":{\"properties\":{\"birth_year\":{\"description\":\"Year of birth, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"death_year\":{\"description\":\"Year of death, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"name\":{\"description\":\"Full name of the person\",\"type\":\"string\"}},\"required\":[\"birth_year\",\"death_year\",\"name\"],\"type\":\"object\"},\"type\":\"array\"},\"bookshelves\":{\"description\":\"Project Gutenberg bookshelves the book belongs to\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"copyright\":{\"description\":\"Copyright status: true (copyrighted), false (public domain in USA), or null (no information)\",\"nullable\":true,\"type\":\"boolean\"},\"download_count\":{\"description\":\"Number of downloads from Project Gutenberg\",\"type\":\"integer\"},\"formats\":{\"additionalProperties\":{\"format\":\"uri\",\"type\":\"string\"},\"description\":\"Available formats for the book, where keys are MIME types and values are download URLs\",\"example\":{\"application/epub+zip\":\"https://www.gutenberg.org/ebooks/84.epub.images\",\"text/html\":\"https://www.gutenberg.org/ebooks/84.html.images\",\"text/plain\":\"https://www.gutenberg.org/files/84/84-0.txt\"},\"type\":\"object\"},\"id\":{\"description\":\"Project Gutenberg ID number\",\"type\":\"integer\"},\"languages\":{\"description\":\"List of two-character language codes\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"media_type\":{\"description\":\"Media type of the book\",\"type\":\"string\"},\"subjects\":{\"description\":\"List of subjects associated with the book\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"summaries\":{\"description\":\"Book summaries\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"title\":{\"description\":\"Book title\",\"type\":\"string\"},\"translators\":{\"description\":\"List of translators\",\"items\":{\"properties\":{\"birth_year\":{\"description\":\"Year of birth, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"death_year\":{\"description\":\"Year of death, or null if unknown\",\"nullable\":true,\"type\":\"integer\"},\"name\":{\"description\":\"Full name of the person\",\"type\":\"string\"}},\"required\":[\"birth_year\",\"death_year\",\"name\"],\"type\":\"object\"},\"type\":\"array\"}},\"required\":[\"id\",\"title\",\"subjects\",\"authors\",\"summaries\",\"translators\",\"bookshelves\",\"languages\",\"copyright\",\"media_type\",\"formats\",\"download_count\"],\"type\":\"object\"}}},\"description\":\"Successful response with book details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"detail\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"}},\"required\":[\"detail\"],\"type\":\"object\"}}},\"description\":\"Book not found\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/books/{id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/books/{id}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "books"
                     },
@@ -283,12 +366,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -717,13 +795,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -733,19 +811,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "book_ref01",
                 "srcdatavar": "book_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "book01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

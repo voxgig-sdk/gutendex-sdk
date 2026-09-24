@@ -1,7 +1,7 @@
 // Typed models for the Gutendex SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,18 +14,6 @@ import (
 
 // Book is the typed data model for the book entity.
 type Book struct {
-	Authors []any `json:"authors"`
-	Bookshelves []any `json:"bookshelves"`
-	Copyright bool `json:"copyright"`
-	DownloadCount int `json:"download_count"`
-	Formats map[string]any `json:"formats"`
-	Id int `json:"id"`
-	Languages []any `json:"languages"`
-	MediaType string `json:"media_type"`
-	Subjects []any `json:"subjects"`
-	Summaries []any `json:"summaries"`
-	Title string `json:"title"`
-	Translators []any `json:"translators"`
 }
 
 // BookLoadMatch is the typed request payload for Book.LoadTyped.
