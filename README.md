@@ -106,11 +106,11 @@ local results, err = client:Book():list()
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
-| Python | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
-| PHP | `voxgig-sdk/gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| Python | `voxgig-sdk-gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| PHP | `voxgig-sdk/gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/gutendex-sdk/go` | `go get github.com/voxgig-sdk/gutendex-sdk/go@latest` |
-| Ruby | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
-| Lua | `voxgig-sdk-gutendex` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| Ruby | `voxgig-sdk-gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
+| Lua | `voxgig-sdk-gutendex-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/gutendex-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/gutendex-sdk/go-cli` | `go install github.com/voxgig-sdk/gutendex-sdk/go-cli/cmd/gutendex@latest` |
 | Go MCP server | `github.com/voxgig-sdk/gutendex-sdk/go-mcp` | `go get github.com/voxgig-sdk/gutendex-sdk/go-mcp@latest` |
 
@@ -355,10 +355,10 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 
