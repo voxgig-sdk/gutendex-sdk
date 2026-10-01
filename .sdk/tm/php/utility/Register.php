@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 GutendexUtility::setRegistrar(function (GutendexUtility $u): void {
     $u->clean = [GutendexClean::class, 'call'];
+    $u->clean_add = [GutendexClean::class, 'add'];
+    $u->clean_explain = [GutendexDone::class, 'clean_explain'];
     $u->done = [GutendexDone::class, 'call'];
     $u->make_error = [GutendexMakeError::class, 'call'];
     $u->feature_add = [GutendexFeatureAdd::class, 'call'];

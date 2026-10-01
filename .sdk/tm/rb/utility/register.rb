@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 GutendexUtility.registrar = ->(u) {
   u.clean = GutendexUtilities::Clean
+  u.clean_add = GutendexUtilities::CleanAdd
+  u.clean_explain = GutendexUtilities::CleanExplain
   u.done = GutendexUtilities::Done
   u.make_error = GutendexUtilities::MakeError
   u.feature_add = GutendexUtilities::FeatureAdd

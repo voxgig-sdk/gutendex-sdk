@@ -233,7 +233,7 @@ func MakeConfig() map[string]any {
 										},
 										map[string]any{
 											"name": "language",
-											"orig": "language",
+											"orig": "languages",
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "en,fr",

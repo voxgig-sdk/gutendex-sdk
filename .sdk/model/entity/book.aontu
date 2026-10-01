@@ -145,7 +145,7 @@ main: kit: entity: book: {
                 ex: "en,fr"
                 k: "query"
                 n: "language"
-                or: "language"
+                or: "languages"
                 r: false
                 t: "`$STRING`"
               }

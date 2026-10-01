@@ -249,7 +249,7 @@ class Config {
                                     },
                                     {
                                         "name": "language",
-                                        "orig": "language",
+                                        "orig": "languages",
                                         "type": "`$STRING`",
                                         "kind": "query",
                                         "example": "en,fr"
