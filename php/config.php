@@ -93,6 +93,7 @@ class GutendexConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -245,6 +246,7 @@ class GutendexConfig
                         'type' => '`$STRING`',
                         'kind' => 'query',
                         'example' => 'true,false',
+                        'field' => true,
                       ],
                       [
                         'name' => 'ids',
@@ -290,18 +292,10 @@ class GutendexConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'author_year_end',
-                      'author_year_start',
-                      'copyright',
-                      'ids',
-                      'language',
-                      'mime_type',
-                      'search',
-                      'sort',
-                      'topic',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -347,6 +341,10 @@ class GutendexConfig
                     'exist' => [
                       'id',
                     ],
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

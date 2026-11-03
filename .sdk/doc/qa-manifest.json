@@ -3,5 +3,18 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Available formats for the book, where keys are MIME types and values are download URLs",
+      "Copyright status: true (copyrighted), false (public domain in USA), or null (no information)",
+      "JSON web API for Project Gutenberg ebook metadata. Provides book information, search, and filtering options.",
+      "List of authors",
+      "Number of downloads from Project Gutenberg",
+      "Production server",
+      "Project Gutenberg bookshelves the book belongs to",
+      "Successful response with book details",
+      "Successful response with paginated list of books"
+    ]
+  }
 }

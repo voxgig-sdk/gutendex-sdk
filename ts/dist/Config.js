@@ -87,6 +87,7 @@ class Config {
             },
             "optspec": {
                 "clearTimer": "`$FUNCTION`",
+                "now": "`$FUNCTION`",
                 "setTimer": "`$FUNCTION`"
             },
             "strict": false,
@@ -238,7 +239,8 @@ class Config {
                                         "orig": "copyright",
                                         "type": "`$STRING`",
                                         "kind": "query",
-                                        "example": "true,false"
+                                        "example": "true,false",
+                                        "field": true
                                     },
                                     {
                                         "name": "ids",
@@ -284,18 +286,10 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "author_year_end",
-                                    "author_year_start",
-                                    "copyright",
-                                    "ids",
-                                    "language",
-                                    "mime_type",
-                                    "search",
-                                    "sort",
-                                    "topic"
-                                ]
+                            "select": {},
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -341,6 +335,10 @@ class Config {
                                 "exist": [
                                     "id"
                                 ]
+                            },
+                            "response": {
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]

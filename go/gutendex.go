@@ -13,7 +13,12 @@ type Context = core.Context
 type Utility = core.Utility
 type Feature = core.Feature
 type Entity = core.Entity
-type GutendexEntity = core.GutendexEntity
+type GutendexEntityBase = core.GutendexEntityBase
+
+// Deprecated: use GutendexEntityBase.
+type GutendexEntity = core.GutendexEntityBase
+
+type StreamItem = core.StreamItem
 type FetcherFunc = core.FetcherFunc
 type Spec = core.Spec
 type Result = core.Result
@@ -41,7 +46,7 @@ func init() {
 	core.NewTimeoutFeatureFunc = func() core.Feature {
 		return feature.NewTimeoutFeature()
 	}
-	core.NewBookEntityFunc = func(client *core.GutendexSDK, entopts map[string]any) core.GutendexEntity {
+	core.NewBookEntityFunc = func(client *core.GutendexSDK, entopts map[string]any) core.GutendexEntityBase {
 		return entity.NewBookEntity(client, entopts)
 	}
 }

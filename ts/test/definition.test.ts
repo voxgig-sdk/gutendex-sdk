@@ -20,13 +20,17 @@ const PLAN: any[] = [
       "author_year_start": 1800,
       "copyright": "true,false",
       "ids": "11,12,13",
-      "language": "v1",
+      "language": "en,fr",
       "mime_type": "text/html",
       "search": "dickens great",
-      "sort": "v1",
+      "sort": "popular",
       "topic": "children"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "author_year_start",
       "author_year_end",
@@ -38,6 +42,44 @@ const PLAN: any[] = [
       "sort",
       "topic"
     ],
+    "queryArgs": [
+      {
+        "name": "author_year_end",
+        "wire": "author_year_end"
+      },
+      {
+        "name": "author_year_start",
+        "wire": "author_year_start"
+      },
+      {
+        "name": "copyright",
+        "wire": "copyright"
+      },
+      {
+        "name": "ids",
+        "wire": "ids"
+      },
+      {
+        "name": "language",
+        "wire": "languages"
+      },
+      {
+        "name": "mime_type",
+        "wire": "mime_type"
+      },
+      {
+        "name": "search",
+        "wire": "search"
+      },
+      {
+        "name": "sort",
+        "wire": "sort"
+      },
+      {
+        "name": "topic",
+        "wire": "topic"
+      }
+    ],
     "auth": null,
     "status": 200,
     "sample": {
@@ -46,7 +88,22 @@ const PLAN: any[] = [
       "previous": "x",
       "results": [
         {
+          "id": 1,
+          "title": "x",
+          "subjects": [
+            "x"
+          ],
           "authors": [
+            {
+              "birth_year": 1,
+              "death_year": 1,
+              "name": "x"
+            }
+          ],
+          "summaries": [
+            "x"
+          ],
+          "translators": [
             {
               "birth_year": 1,
               "death_year": 1,
@@ -56,32 +113,17 @@ const PLAN: any[] = [
           "bookshelves": [
             "x"
           ],
-          "copyright": true,
-          "download_count": 1,
-          "formats": {
-            "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub.images",
-            "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
-            "text/plain": "https://www.gutenberg.org/files/84/84-0.txt"
-          },
-          "id": 1,
           "languages": [
             "x"
           ],
+          "copyright": true,
           "media_type": "x",
-          "subjects": [
-            "x"
-          ],
-          "summaries": [
-            "x"
-          ],
-          "title": "x",
-          "translators": [
-            {
-              "birth_year": 1,
-              "death_year": 1,
-              "name": "x"
-            }
-          ]
+          "formats": {
+            "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
+            "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub.images",
+            "text/plain": "https://www.gutenberg.org/files/84/84-0.txt"
+          },
+          "download_count": 1
         }
       ]
     },
@@ -102,7 +144,12 @@ const PLAN: any[] = [
     ],
     "select": {},
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [],
+    "queryArgs": [],
     "auth": null,
     "status": 200,
     "sample": {
@@ -137,8 +184,8 @@ const PLAN: any[] = [
       "copyright": true,
       "media_type": "x",
       "formats": {
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub.images",
         "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
+        "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub.images",
         "text/plain": "https://www.gutenberg.org/files/84/84-0.txt"
       },
       "download_count": 1

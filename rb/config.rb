@@ -79,6 +79,7 @@ module GutendexConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -231,6 +232,7 @@ module GutendexConfig
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "example" => "true,false",
+                        "field" => true,
                       },
                       {
                         "name" => "ids",
@@ -276,18 +278,10 @@ module GutendexConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "author_year_end",
-                      "author_year_start",
-                      "copyright",
-                      "ids",
-                      "language",
-                      "mime_type",
-                      "search",
-                      "sort",
-                      "topic",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -333,6 +327,10 @@ module GutendexConfig
                     "exist" => [
                       "id",
                     ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

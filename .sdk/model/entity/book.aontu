@@ -185,18 +185,9 @@ main: kit: entity: book: {
           }
           m: "GET"
           o: "/books"
-          q: {
-            exist: [
-              "author_year_end"
-              "author_year_start"
-              "copyright"
-              "ids"
-              "language"
-              "mime_type"
-              "search"
-              "sort"
-              "topic"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -237,6 +228,10 @@ main: kit: entity: book: {
             exist: [
               "id"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
